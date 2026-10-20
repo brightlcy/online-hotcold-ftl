@@ -40,12 +40,12 @@
         "tests",
         "-v"
       ],
-      "cwd": "/private/var/folders/vb/9h6x5l497hg35vf6h33nbklc0000gn/T/online_hotcold_ftl-standalone-8xtg0ryv/online_hotcold_ftl",
-      "finished_at_utc": "2026-10-20T05:43:37.584079Z",
+      "cwd": "/private/var/folders/vb/9h6x5l497hg35vf6h33nbklc0000gn/T/online_hotcold_ftl-standalone-vjip7q4m/online_hotcold_ftl",
+      "finished_at_utc": "2026-10-20T05:52:52.191096Z",
       "log": "tests.log",
-      "log_sha256": "56725d0e8403a9a830eb17076b8957c8a0b23c0b744a1142b0af92b6bc8d1924",
+      "log_sha256": "40af204c8257912e5adc322e92e273c856095acd00de0593726200a77483a0c0",
       "returncode": 0,
-      "started_at_utc": "2026-10-20T05:43:37.109319Z"
+      "started_at_utc": "2026-10-20T05:52:51.808651Z"
     },
     {
       "argv": [
@@ -54,12 +54,12 @@
         "simulator.run_baseline",
         "--help"
       ],
-      "cwd": "/private/var/folders/vb/9h6x5l497hg35vf6h33nbklc0000gn/T/online_hotcold_ftl-standalone-8xtg0ryv/online_hotcold_ftl",
-      "finished_at_utc": "2026-10-20T05:43:37.750414Z",
+      "cwd": "/private/var/folders/vb/9h6x5l497hg35vf6h33nbklc0000gn/T/online_hotcold_ftl-standalone-vjip7q4m/online_hotcold_ftl",
+      "finished_at_utc": "2026-10-20T05:52:52.275749Z",
       "log": "help-run_baseline.log",
       "log_sha256": "ef0b391c529f65eeb3e2f7e4744fb40fd54275d68662b8678cbfa9a645f71ad1",
       "returncode": 0,
-      "started_at_utc": "2026-10-20T05:43:37.586249Z"
+      "started_at_utc": "2026-10-20T05:52:52.191822Z"
     },
     {
       "argv": [
@@ -68,12 +68,12 @@
         "simulator.run_compare_hot_cold",
         "--help"
       ],
-      "cwd": "/private/var/folders/vb/9h6x5l497hg35vf6h33nbklc0000gn/T/online_hotcold_ftl-standalone-8xtg0ryv/online_hotcold_ftl",
-      "finished_at_utc": "2026-10-20T05:43:37.870652Z",
+      "cwd": "/private/var/folders/vb/9h6x5l497hg35vf6h33nbklc0000gn/T/online_hotcold_ftl-standalone-vjip7q4m/online_hotcold_ftl",
+      "finished_at_utc": "2026-10-20T05:52:52.365546Z",
       "log": "help-run_compare_hot_cold.log",
       "log_sha256": "210077b586b9499233ba8e9b419651a81f6526dfbc68c812163ef7377eb0d8c0",
       "returncode": 0,
-      "started_at_utc": "2026-10-20T05:43:37.752059Z"
+      "started_at_utc": "2026-10-20T05:52:52.276430Z"
     }
   ],
   "config_sha256": {
@@ -82,8 +82,8 @@
     "configs/runtime.json": "cb6fe938c9c3793f6dfdc99e3c7c969f60a798bb1ca59906602a5f88581814cb",
     "configs/smoke.json": "e726e71b8b015677bbcb1eae24d64976bb1405f8ac7be3d29c2ccb3379bbfc26"
   },
-  "experiment_id": "20261020T054336Z-tests-f8736947",
-  "finished_at_utc": "2026-10-20T05:43:37.871540Z",
+  "experiment_id": "20261020T055251Z-tests-e9f4265c",
+  "finished_at_utc": "2026-10-20T05:52:52.366121Z",
   "git_branch": null,
   "git_commit_sha": null,
   "git_worktree_status": null,
@@ -92,7 +92,7 @@
   "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
   "python_version": "3.14.6",
   "reference_manifest_sha256": "1bfbc56ec5ef8e1a74856385c506ab534bd451b969b9e5e265bf01aa6a0b6f83",
-  "runner_sha256": "d2d1f916531692a404902eeeb187dc4c0c6680df3d2ce918c3a424cb463006c6",
+  "runner_sha256": "89394459823b9554f56def8db90dc695f4968f213b86fb91ecff134931a400ec",
   "schema_version": 1,
   "source_hash_semantics": "source_sha256 is the expected preserved export; actual_source_sha256 records executed bytes.",
   "source_sha256": {
@@ -124,10 +124,10 @@
     "simulator/trace_io.py": "0d67939e91e84c9f6c2bd779f1e73c92b2b0deaa4ed7d77cb69ebfcdb188e1fc",
     "simulator/workload_profile.py": "7d181077d41f32d8efb0eed44335863fec6f5895df05fc049ce99f0ba39c2ffd"
   },
-  "started_at_utc": "2026-10-20T05:43:36.992338Z",
+  "started_at_utc": "2026-10-20T05:52:51.706558Z",
   "status": "PASS",
   "temporary_copy_removed_after_validation": true,
-  "test_count": 137,
+  "test_count": 138,
   "validation_kind": "STANDALONE_COPY_WITHOUT_PARENT_REPOSITORY",
   "verification": {
     "archive_member_count": 103,

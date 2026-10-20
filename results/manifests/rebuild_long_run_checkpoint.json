@@ -1,4 +1,8 @@
 {
+  "absolute_current_command_log": "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053138Z-replay-12d7c9db/replay-device-740.log",
+  "absolute_run_directory": "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053138Z-replay-12d7c9db",
+  "absolute_run_manifest": "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053138Z-replay-12d7c9db/run_manifest.json",
+  "automatic_completion_update": "The already-running reproduce.py main() finally block writes PASS or FAIL and finished_at_utc to run_manifest.json when all three comparisons return. It also writes dev740 comparison before exiting. Do not edit that running manifest or move/remove its staging directory.",
   "completed_full_device_comparisons": [
     {
       "device_id": 4,
@@ -16,8 +20,12 @@
   "completed_policy_runs": 5,
   "evidence_class": "HISTORICAL_REPLAY",
   "experiment_id": "20261020T053138Z-replay-12d7c9db",
+  "finalize_behavior": "After worker manifest status PASS, reads existing outputs and compares all metrics, trace SHA, phase controls/counters and latency diagnostics without launching any simulator. Creates a new immutable report; an existing report is not overwritten. This works from a canonical copy as long as the original staging output directory remains available.",
+  "finalize_command": "python3 reproduce.py finalize --run-dir \"/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053138Z-replay-12d7c9db\" --report results/manifests/rebuild_completed_hotcold_replay.json",
   "live_exec_session_id": 7682,
   "live_session_note": "Process handle is valid only while the current execution service retains it; this is not a simulator state checkpoint.",
+  "os_pid": null,
+  "os_pid_note": "The execution service exposed session ID 7682, not an OS PID; process enumeration is unavailable in this sandbox.",
   "pending_policy_run": {
     "current_output_relative_path": "artifacts/runs/20261020T053138Z-replay-12d7c9db/device_740/hot_cold",
     "device_id": 740,
@@ -25,11 +33,14 @@
     "historical_runtime_note": "The archived run took about 3 hours 25 minutes. This is context, not a forecast for the current runtime.",
     "policy": "hot_cold"
   },
-  "resume_from": "Poll the existing execution first. If it is still live, keep it running. If it has completed, inspect run_manifest.json then verify the final device740 comparison and all six phase/config records. If the process no longer exists, rerun only python3 reproduce.py replay --device 740. Do not repeat dev4/dev49 or completed unit tests.",
+  "poll_command_note": "Use tools.write_stdin(session_id=7682, chars=\"\", yield_time_ms=1000) while the execution session is retained. After it finishes, inspect the persisted run_manifest.json; a missing tool session is not proof of success.",
+  "portfolio_validation_status": "PARTIAL: 5 of 6 policy runs complete",
+  "post_finalize": "On PASS, retain the new completed report and its SHA, update this checkpoint to COMPLETED with that link, update REPRODUCIBILITY.md/README validation level, commit the new evidence to the active project and update the dedicated Notion checkpoint. Do not rerun expensive experiments.",
+  "resume_from": "First inspect the existing worker manifest and retained session. If RUNNING, leave it running. If PASS, run finalize_command from the project directory. If FAIL, inspect command logs and preserved outputs before deciding on any rerun. If the execution service no longer retains the session and the manifest stays RUNNING, confirm whether the process survived before restarting. Never repeat completed dev4/dev49 tests/runs. Only if the process is confirmed gone and no completed dev740 output exists, rerun python3 reproduce.py replay --device 740.",
   "run_manifest_relative_path": "artifacts/runs/20261020T053138Z-replay-12d7c9db/run_manifest.json",
   "schema_version": 1,
   "scientific_claim_limit": "dev740 Hot/Cold remains archive-verified historical evidence until this replay finishes; no rerun success is claimed.",
   "source_state": "The frozen simulator is unchanged; no runtime optimization or counter patch was applied.",
   "status": "RUNNING",
-  "updated_at_utc": "2026-10-20T05:50:03.895303+00:00"
+  "updated_at_utc": "2026-10-20T05:52:39.237331+00:00"
 }

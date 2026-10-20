@@ -28,7 +28,7 @@ The compact checked-in report is [rebuild_validation.json](../results/manifests/
 | Evidence | Verification level |
 |---|---|
 | Original tests | 130 passed before the runner was added |
-| Tests with safety checks | 137 passed; original simulator files unchanged |
+| Tests with safety checks | 138 passed; original simulator files unchanged |
 | Alibaba dev4/dev49/dev740 | See checked-in report for completed historical replay and per-metric comparison |
 | MSR `prxy_1` 100k | **BLOCKED** for replay: the input extract is absent from the preserved archive; summaries and manifests are preserved |
 | Included sample | Fresh smoke run, separate from research results |
@@ -51,3 +51,19 @@ python3 -m simulator.run_baseline --help
 ```
 
 Do not silently edit archived result CSVs or the reference snapshot to make a failing replay pass. Record a new configuration, evidence class, source revision, and output directory instead. Figure regeneration is documented in the project README and figure provenance files; it uses preserved result data rather than smoke outputs.
+
+## Long replay checkpoint (2026-10-20)
+
+Five of six policy executions have finished: both policies for dev4 and dev49, plus dev740 Baseline. Dev4/dev49 each match all 24 archived comparison metrics; the five finished policy manifests also match the original controls and phase counters. **Dev740 Hot/Cold is RUNNING**, so the three-device replay remains **PARTIAL**. Its original archived execution took 12,307.53 seconds (about 3 hours 25 minutes); that duration is context rather than an ETA for this machine.
+
+[rebuild_long_run_checkpoint.json](../results/manifests/rebuild_long_run_checkpoint.json) records the live session, exact staging directory/log paths, completed work and resume procedure. Execution session `7682` is the available process handle; the sandbox did not expose its OS PID. The running worker automatically writes its final status and completion UTC to its own `run_manifest.json` after dev740 comparison finishes. Keep the existing staging directory available even when copying this project elsewhere. No automatic schedule was created.
+
+To finish verification, first inspect that recorded worker manifest. When it reads `PASS`, run the following from the current project directory; the command reads completed output and **launches no simulation**:
+
+```sh
+python3 reproduce.py finalize \
+  --run-dir "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053138Z-replay-12d7c9db" \
+  --report results/manifests/rebuild_completed_hotcold_replay.json
+```
+
+The project-local path above identifies this private rebuild's retained worker, rather than a portable input requirement. The same `finalize` command can validate any completed run made by this runner using its actual `--run-dir`. It checks preserved source identity, all comparison metrics, trace checksum, geometry, parameters, phase plan/counters, trace statistics and latency-model settings. It also reports timing diagnostics. A new report is created without overwriting prior evidence. Retain that report and update the checkpoint/README validation status after success. A `RUNNING` manifest is rejected; do not restart the expensive run while it is live.
