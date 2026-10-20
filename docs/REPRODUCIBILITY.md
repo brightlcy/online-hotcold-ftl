@@ -28,7 +28,7 @@ The compact checked-in report is [rebuild_validation.json](../results/manifests/
 | Evidence | Verification level |
 |---|---|
 | Original tests | 130 passed before the runner was added |
-| Tests with safety checks | 138 passed; original simulator files unchanged |
+| Tests with safety checks | 139 passed; original simulator files unchanged |
 | Alibaba dev4/dev49/dev740 | See checked-in report for completed historical replay and per-metric comparison |
 | MSR `prxy_1` 100k | **BLOCKED** for replay: the input extract is absent from the preserved archive; summaries and manifests are preserved |
 | Included sample | Fresh smoke run, separate from research results |
@@ -67,3 +67,5 @@ python3 reproduce.py finalize \
 ```
 
 The project-local path above identifies this private rebuild's retained worker, rather than a portable input requirement. The same `finalize` command can validate any completed run made by this runner using its actual `--run-dir`. It checks preserved source identity, all comparison metrics, trace checksum, geometry, parameters, phase plan/counters, trace statistics and latency-model settings. It also reports timing diagnostics. A new report is created without overwriting prior evidence. Retain that report and update the checkpoint/README validation status after success. A `RUNNING` manifest is rejected; do not restart the expensive run while it is live.
+
+Finalization requires a recorded PASS preservation check and compares separately recorded executed source digests when present. Legacy workers without that extra digest remain identifiable as legacy evidence; the new report explicitly records that limitation rather than filling in missing historical metadata. Original manifests are never edited.

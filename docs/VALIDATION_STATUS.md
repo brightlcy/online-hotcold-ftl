@@ -4,7 +4,7 @@ Verified on 2026-10-20. [GitHub CI run](https://github.com/brightlcy/online-hotc
 
 ## Execution evidence
 
-- 138 local core/reproduction tests PASS, and the same source passes the Ubuntu CI test command.
+- 139 local core/reproduction tests PASS, and the same source passes the Ubuntu CI test command.
 - Five optimized-mode analysis regression tests PASS; damaged numeric/config/checksum fixtures are rejected.
 - Source/archive preservation and plot-source validation PASS.
 - The Quick Start verify/tests/smoke commands passed in an independent project copy and in GitHub CI.
@@ -17,3 +17,5 @@ Verified on 2026-10-20. [GitHub CI run](https://github.com/brightlcy/online-hotc
 Five of six Alibaba policy replays completed. Both dev4/dev49 pairs match all 24 compared metrics. dev740 Baseline also matches; the frozen Hot/Cold path is still running. MSR input is absent. Historical dev4 diagnostics contain a strict floating-point latency comparison flag; replay logs contain no negative total latency. Timing claims remain outside the headline.
 
 See [reproducibility](REPRODUCIBILITY.md), [current compact reports](../results/manifests/), [figure data and captions](FIGURES.md), and [Red Team review](RED_TEAM.md). No algorithm or original research result was altered during the rebuild.
+
+The finalizer explicitly validates recorded executed-source hashes when available and labels legacy source metadata. The underlying research simulator and results are unchanged.
