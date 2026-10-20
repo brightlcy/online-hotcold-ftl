@@ -1,0 +1,382 @@
+{
+  "import_parent_commit": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+  "original_portfolio_url": "https://github.com/brightlcy/ssd-ftl-research-portfolio",
+  "note": "Local export commit; it is not a commit in the remote portfolio history. Original algorithm/result bytes preserved. README replaced; historical README retained in docs/legacy.",
+  "files": [
+    {
+      "path": "ALIBABA_STREAMING_V2.md",
+      "sha256": "4b8ca426dfb22a916a92a562242b6bb8971ae97fd63b65a2309dee0d7d9ed131",
+      "size_bytes": 781
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "sha256": "567349348d50f2ace7ad6feb40c0d258e819c3d9e4171995cc78f2371b4a9338",
+      "size_bytes": 537
+    },
+    {
+      "path": "README.md",
+      "sha256": "bcc46bbc7e0b05e0b8f959e914d00002faddd311e3e1d1f3d89f687ffab0d953",
+      "size_bytes": 8197
+    },
+    {
+      "path": "UPLOAD_SCOPE.md",
+      "sha256": "b28de6df5425c25258372b68ff6437471c6800d030ddc02503117aaedd9a116d",
+      "size_bytes": 1621
+    },
+    {
+      "path": "data/implementation_validation.csv",
+      "sha256": "83e0dc3876bea75ae5a9263d18a2d67f15d07de59eebc2662ff718e5b96d7c63",
+      "size_bytes": 526
+    },
+    {
+      "path": "data/policy_comparison_all.csv",
+      "sha256": "b6d3f982366d1253e49b87c7dbe6918b64b1c4ab072f27a3c00391855b1dca23",
+      "size_bytes": 3767
+    },
+    {
+      "path": "data/policy_summary_wide.csv",
+      "sha256": "828ae86c85725f698ee84c011b14eb6cdb9314cd4b766a97c261c2f65d19c6ef",
+      "size_bytes": 2181
+    },
+    {
+      "path": "data/threshold_sensitivity.csv",
+      "sha256": "e87ee448cf0c66424f6f64eb84804f3692233e558d7c9f589619df3633f6ed8a",
+      "size_bytes": 1889
+    },
+    {
+      "path": "data/workload_characteristics.csv",
+      "sha256": "03fd8536c0aa699c01e944216875443be258d742f7c9536f0eb40dfcab9c4314",
+      "size_bytes": 773
+    },
+    {
+      "path": "figures/fig01_workload_characteristics.png",
+      "sha256": "a11eb91381c2a12afa7686052d39f2faeced12bb1430370c85f0926bb843fcf7",
+      "size_bytes": 35130
+    },
+    {
+      "path": "figures/fig02_waf_comparison.png",
+      "sha256": "ad31ce1f0eade81097fbad74cce24e4e6bbcbba88d7865bb91fc4395426ec722",
+      "size_bytes": 37083
+    },
+    {
+      "path": "figures/fig03_gc_cost_reduction.png",
+      "sha256": "44db90df111e535ea9a2cc55abbb807e8014ed24bc587a3c597b077e8b17463d",
+      "size_bytes": 37694
+    },
+    {
+      "path": "figures/fig04_latency_reduction.png",
+      "sha256": "82c120a29d3fdf6931749c69592a0f6741d2f64d58763436e1ec6013631c6f9f",
+      "size_bytes": 35693
+    },
+    {
+      "path": "figures/fig05_threshold_sensitivity.png",
+      "sha256": "0f2caabead28e84ffee9bfe49c6c8c834d4a6df67d40e6defedd1c924572865b",
+      "size_bytes": 63485
+    },
+    {
+      "path": "figures/fig06_overwrite_vs_waf_reduction.png",
+      "sha256": "144a42bd7c62ae18fe0d598498253f9914051e93d906aac419d3f8135c9f6231",
+      "size_bytes": 45640
+    },
+    {
+      "path": "reports/experimental_results_summary.xlsx",
+      "sha256": "456c4265b47e61b7c224fc7cba076f8628afbe25a36d35d49244c40013fd0130",
+      "size_bytes": 20974
+    },
+    {
+      "path": "reports/final_report.docx",
+      "sha256": "a7ca0292933911d67370969b606f742e809f5964476102e56509cab71055cf5e",
+      "size_bytes": 259942
+    },
+    {
+      "path": "reports/final_report.pdf",
+      "sha256": "4e0f6767091906087d52e3fb75d0b2c9caadb1ffe6a547acdfaa57cae5eff6f2",
+      "size_bytes": 686682
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "4139f538efe35d2e4321c03b135d4ec96d505951e97566fb4aa9b7abad560453",
+      "size_bytes": 86
+    },
+    {
+      "path": "results_archive.zip",
+      "sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+      "size_bytes": 2376019
+    },
+    {
+      "path": "samples/alibaba_device_size_sample.csv",
+      "sha256": "c8699f72e038e66bccdca991eb3dfec36b47a5ebadbeab23a1679399b2b38eaf",
+      "size_bytes": 49
+    },
+    {
+      "path": "samples/alibaba_ebs_2026_sample.csv",
+      "sha256": "3f2500a30d73d1a39d32fe7163def8da157c1f5f4234f1e0f29bdd671f6fb49b",
+      "size_bytes": 152
+    },
+    {
+      "path": "samples/alibaba_ebs_metadata_sample.csv",
+      "sha256": "4fa0215b88b9df762ddca95d01720c05494434d4623e85bf1a9298d6207c98e6",
+      "size_bytes": 170
+    },
+    {
+      "path": "samples/alibaba_io_sample.csv",
+      "sha256": "4a423e6995596cd9f5708129a940508a1a7d7cbfcd0b475fb827cd187b1592aa",
+      "size_bytes": 160
+    },
+    {
+      "path": "samples/sample.standard.csv",
+      "sha256": "c2d8a7b8ab2df1361b2c28a9f31b9b4f43ec8a894dcf13fc2a9f421eb3b0983c",
+      "size_bytes": 85
+    },
+    {
+      "path": "simulator/__init__.py",
+      "sha256": "2ffa360901c102ae55c32e6a514ab97a5644b2409ad2128a5c188a46075adb3f",
+      "size_bytes": 42
+    },
+    {
+      "path": "simulator/address.py",
+      "sha256": "d3cf5273ba6b113a1f233fb8553c8e7a69d8b248334fb208befbd6f1a45a8ce6",
+      "size_bytes": 2571
+    },
+    {
+      "path": "simulator/alibaba_ebs_2026.py",
+      "sha256": "93a89bd9170661b5fd9ed39718c2364427a562bc6f0362d4a5433f9eae267af8",
+      "size_bytes": 16418
+    },
+    {
+      "path": "simulator/alibaba_ebs_metadata.py",
+      "sha256": "207f3dbdab1814500556d0f63a02bf5ac05d695c673b4b6e075298ebe9146b21",
+      "size_bytes": 11697
+    },
+    {
+      "path": "simulator/alibaba_streaming.py",
+      "sha256": "519c230257fe4d49ea1ef941fcf80810cc3e6fdaa4905e269b76b942e1341c96",
+      "size_bytes": 10651
+    },
+    {
+      "path": "simulator/alibaba_trace.py",
+      "sha256": "a098490890fc2edc72a71948c966bc248b68e4f657cbc6a193aaa1a99f224020",
+      "size_bytes": 20578
+    },
+    {
+      "path": "simulator/alibaba_workload.py",
+      "sha256": "12a1d53f8e12298ef26476033d79ce95c87fdfdef58f39214fb2ae0f8cb5d25d",
+      "size_bytes": 20791
+    },
+    {
+      "path": "simulator/baseline_ftl.py",
+      "sha256": "0906212026abd3e0a78252bffb6bd54ace38084bdeb0e5bd3d99f90693b3eea8",
+      "size_bytes": 18321
+    },
+    {
+      "path": "simulator/config.py",
+      "sha256": "4d671e9f5bcbe1ff4b4b7fc7ba10e335ea9df5e087ff043c14d360cf8846b8fe",
+      "size_bytes": 6090
+    },
+    {
+      "path": "simulator/experiment_runner.py",
+      "sha256": "44426e06286a36078d5fc9c0ea7e2199427215a43adacc7837f27ec93670bd30",
+      "size_bytes": 12337
+    },
+    {
+      "path": "simulator/gc_policy.py",
+      "sha256": "797518975fbb786181c51b064a84bb0c1604cb69cbd963b66bca9893db27dc94",
+      "size_bytes": 5211
+    },
+    {
+      "path": "simulator/hot_cold_experiment.py",
+      "sha256": "0b886c19c700c05c9736e45d0782ea0a8c470e32f636dcab0f89450fa7c9cc34",
+      "size_bytes": 11230
+    },
+    {
+      "path": "simulator/hot_cold_ftl.py",
+      "sha256": "90e5af5b140333dfa27215eebc8ec614234e737ade22eaa445db7ae0cef76655",
+      "size_bytes": 13739
+    },
+    {
+      "path": "simulator/latency_attribution.py",
+      "sha256": "d8619d4442c0689fd08f3ee9cbb352ee4818cd05ba24229d05dfb866c794440f",
+      "size_bytes": 11466
+    },
+    {
+      "path": "simulator/latency_model.py",
+      "sha256": "011a7c6cc96d340429bcdcd952aba21875bffa9316f6bfc6e9c5dca06c616aff",
+      "size_bytes": 14944
+    },
+    {
+      "path": "simulator/metadata.py",
+      "sha256": "dc30c74d59d9a5eb5e5bfd1ca3aa187cba769d8c99ee3f5230f87862f6f4f916",
+      "size_bytes": 15309
+    },
+    {
+      "path": "simulator/run_analyze_alibaba.py",
+      "sha256": "f59bc1d45d7a52d728707d3720becd7fdb8bd7ff035c46b991b627930c750366",
+      "size_bytes": 4561
+    },
+    {
+      "path": "simulator/run_baseline.py",
+      "sha256": "1ec45b6684b590099d20e9cc4e7b8583f130e6d2a6ab5861bc5dcc7ed00950d5",
+      "size_bytes": 8827
+    },
+    {
+      "path": "simulator/run_compare_hot_cold.py",
+      "sha256": "6ac743f23318bfe37a9b86d75846a1cede69b8046f054d72320f3aff1e7a2811",
+      "size_bytes": 6598
+    },
+    {
+      "path": "simulator/run_convert_alibaba.py",
+      "sha256": "d4e85e94bed7f88e2bb54aab440e7db429d5106b87fdd625dc5454b3417e99c0",
+      "size_bytes": 3493
+    },
+    {
+      "path": "simulator/run_convert_alibaba_ebs.py",
+      "sha256": "bfc65e230785d2dce0699898d02b97a0768ddba1c140aa8c2ee12a96708e3129",
+      "size_bytes": 2870
+    },
+    {
+      "path": "simulator/run_extract_alibaba_devices.py",
+      "sha256": "ad6e651f01c1efc73e69ef4683f1f7a887d0449745491bb902b2028b6bee3280",
+      "size_bytes": 2733
+    },
+    {
+      "path": "simulator/run_hot_cold.py",
+      "sha256": "9fbf890c742775028be5815bf667c123eea13f1ada9b27b45d7d2b4295528303",
+      "size_bytes": 4662
+    },
+    {
+      "path": "simulator/run_profile_workload.py",
+      "sha256": "a8a82989f527ed942e6072f75549549c91508c8f611eb76bb743431d563f448a",
+      "size_bytes": 3005
+    },
+    {
+      "path": "simulator/run_select_alibaba_ebs.py",
+      "sha256": "2e49dda3c975db08a25f4120916778019eb3c2379dfd63208eb995019c41064c",
+      "size_bytes": 2230
+    },
+    {
+      "path": "simulator/trace_io.py",
+      "sha256": "0d67939e91e84c9f6c2bd779f1e73c92b2b0deaa4ed7d77cb69ebfcdb188e1fc",
+      "size_bytes": 15158
+    },
+    {
+      "path": "simulator/workload_profile.py",
+      "sha256": "7d181077d41f32d8efb0eed44335863fec6f5895df05fc049ce99f0ba39c2ffd",
+      "size_bytes": 15268
+    },
+    {
+      "path": "tests/test_alibaba_ebs_2026.py",
+      "sha256": "3d469bacf1f3f709047421342b646a45bd210b9c2dd5655e9a7539a8e72f39a1",
+      "size_bytes": 5947
+    },
+    {
+      "path": "tests/test_alibaba_ebs_metadata.py",
+      "sha256": "b340703bc63d788c0f998048383f66cb758664e6f5971ccdee06ed2257f226fa",
+      "size_bytes": 3430
+    },
+    {
+      "path": "tests/test_alibaba_progress_checkpoint.py",
+      "sha256": "5e9e5f88f1f4415d32d92b196089c62b224b9d878cfe10ed460c4260ec05903b",
+      "size_bytes": 3388
+    },
+    {
+      "path": "tests/test_alibaba_streaming.py",
+      "sha256": "c1fba64a831d065dc1e212dd07bb9782a909e1bf4a921a9dd8479d55feb98333",
+      "size_bytes": 2453
+    },
+    {
+      "path": "tests/test_alibaba_trace.py",
+      "sha256": "2a4d1a9544cbf7119b140f1d8aa76d6d16045e94d996dbea6baa610d90093c47",
+      "size_bytes": 9128
+    },
+    {
+      "path": "tests/test_alibaba_workload.py",
+      "sha256": "b3b994ecd2b27bb27be15b489b92741de33c07934882986b7ee6229c12cdcd3d",
+      "size_bytes": 4174
+    },
+    {
+      "path": "tests/test_baseline_ftl.py",
+      "sha256": "76c928b431ed1f1237cde9676492cd15c11f6c14fca7b1713bce5322913ae4ea",
+      "size_bytes": 9024
+    },
+    {
+      "path": "tests/test_config_address.py",
+      "sha256": "5d3107871e8c816439211af6b1cfabe06b5b340aad4cc7b953ae57f2d4d4c0f2",
+      "size_bytes": 2242
+    },
+    {
+      "path": "tests/test_experiment_runner.py",
+      "sha256": "6b6b0489b5d936b1d909c69455acf039d090dcfc611b628f745065c66db3f9a7",
+      "size_bytes": 6251
+    },
+    {
+      "path": "tests/test_gc_policy.py",
+      "sha256": "75dc9e1242e9c953fafe04d91d0cc720013295fa1f28b2ad6847842ea2c5aa1e",
+      "size_bytes": 5112
+    },
+    {
+      "path": "tests/test_hot_cold_experiment.py",
+      "sha256": "d99e418397026e9d959601334e6dcc8b27d508f611725726418b565fce5b1175",
+      "size_bytes": 2523
+    },
+    {
+      "path": "tests/test_hot_cold_ftl.py",
+      "sha256": "bd7edf4097ff31e8d25c56ece6f20636336658e540a62fd7ab7b5c9138dc0777",
+      "size_bytes": 3507
+    },
+    {
+      "path": "tests/test_latency_attribution.py",
+      "sha256": "3e7af8783132d7b70247dd7c9103e7c7b775ba1860770542fdd170b86cd17b2a",
+      "size_bytes": 4444
+    },
+    {
+      "path": "tests/test_latency_model.py",
+      "sha256": "ec65fb300d645728cca505c92b87c97269c2fec600d4aa9212a2e09db16114ca",
+      "size_bytes": 6412
+    },
+    {
+      "path": "tests/test_metadata.py",
+      "sha256": "8576f2829e04ae4a7ec01a8cfe64e325015b6324c2d3f82536e5c88cad48af36",
+      "size_bytes": 6428
+    },
+    {
+      "path": "tests/test_result_io.py",
+      "sha256": "6d563d875f312a48de4ed2119cb264fef61f90299408570c0094efc0811d6d9a",
+      "size_bytes": 2509
+    },
+    {
+      "path": "tests/test_run_alibaba_ebs_cli.py",
+      "sha256": "3d02a622afa40dcde94e41b16847e38284fef9f96a9e55a23d9b0305b229ec18",
+      "size_bytes": 2054
+    },
+    {
+      "path": "tests/test_run_analyze_alibaba.py",
+      "sha256": "f330a55c31eceff07e04208353d5a7ddb25438b6a65b1f0aa07b4285f1cd6667",
+      "size_bytes": 1483
+    },
+    {
+      "path": "tests/test_run_baseline.py",
+      "sha256": "a0fd596f7bc6a16766cbb75bec9ee3149cccb1c9f133d555df4c065c8eccf616",
+      "size_bytes": 4689
+    },
+    {
+      "path": "tests/test_run_convert_alibaba.py",
+      "sha256": "237cf6d770d39bfc11e2f5e28b23740217d12f8100fc6520ecb04a61f7667dc4",
+      "size_bytes": 1716
+    },
+    {
+      "path": "tests/test_run_profile_workload.py",
+      "sha256": "097e242cb2f2775d358703c72d66c34a39eb3c5f27028989d09b86760cbc851d",
+      "size_bytes": 1037
+    },
+    {
+      "path": "tests/test_trace_io.py",
+      "sha256": "7c84c3a966b341cbc63d4ba88dc6fad42e875a64ed5c73a153792db10ed4d230",
+      "size_bytes": 5984
+    },
+    {
+      "path": "tests/test_workload_profile.py",
+      "sha256": "1252dc4a602faddbd9f5c35d851288a1ecd3e9c219e1ae27975d1dd1c0e79016",
+      "size_bytes": 3394
+    }
+  ]
+}

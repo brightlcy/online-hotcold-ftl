@@ -1,0 +1,7 @@
+# Methodology
+
+WAF = NAND page programs / host page writes over the stated evaluation interval. NAND programs = host writes + valid-page migration in this model. `avg_migrated_pages_per_gc` is a different metric, not WAF. Read requests are not in the WAF denominator. GC count and valid-page migration are event counters. Erase-count CV is standard deviation / mean across per-block erase counts, not measured endurance.
+
+One warm-up pass then one measurement pass of the same finite slice. State is retained; event counters use phase deltas and queue timing resets. Fixed target OP=(physical-logical)/physical=0.20, page 4096B, four chips, 64 pages/block, GC threshold max(ceil(5% of physical pages), 2 reserved blocks). Block rounding changes actual OP. Capacity comes from write working set, not maximum sparse LPN. Greedy victim selection is identical in baseline/proposed. Classification uses only the past 4096 host page writes and threshold 8. See archived `resolved_config.json` and experiment manifests for exact per-workload geometry.
+
+A 100k-request slice is not 100k writes or pages. No seed uncertainty interval is assigned to deterministic single-slice results. Four workload cases are descriptive, not a population estimate. Threshold-2 sensitivity is historical negative evidence. Files under `docs/legacy` and old reports are retained verbatim and can contain superseded interpretations.

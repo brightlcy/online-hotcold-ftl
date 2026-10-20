@@ -1,0 +1,380 @@
+{
+  "baseline_original_tests": {
+    "evidence": "Pre-change baseline executed by parent agent; unchanged simulator export hashes cross-checked with SOURCE_UPLOAD_MANIFEST.json.",
+    "status": "PASS",
+    "test_count": 130
+  },
+  "latest_test_count": 137,
+  "limitations": [
+    "MSR prxy_1 input extract absent: historical summaries/manifests only, replay BLOCKED.",
+    "Warm-up and measurement repeat the same trace; no independent time holdout.",
+    "Original dev4 strict latency flag false: fresh logs have two sub-nanosecond rounding comparisons per policy and zero negative latency; analytical latency is not device measurement."
+  ],
+  "project": "online_hotcold_ftl",
+  "report_id": "github-research-portfolio-rebuild-2026-10-20",
+  "runs": [
+    {
+      "action": "tests",
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "finished_at_utc": "2026-10-20T05:31:33.147735Z",
+          "log": "tests.log",
+          "log_sha256": "70adf32add3a3c175757cd7b504cd2ffddcd81f557135fe97f5f5fb0eafb631a",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:31:32.797215Z"
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "simulator.run_baseline",
+            "--help"
+          ],
+          "finished_at_utc": "2026-10-20T05:31:33.224324Z",
+          "log": "help-run_baseline.log",
+          "log_sha256": "ef0b391c529f65eeb3e2f7e4744fb40fd54275d68662b8678cbfa9a645f71ad1",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:31:33.148083Z"
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "simulator.run_compare_hot_cold",
+            "--help"
+          ],
+          "finished_at_utc": "2026-10-20T05:31:33.298536Z",
+          "log": "help-run_compare_hot_cold.log",
+          "log_sha256": "210077b586b9499233ba8e9b419651a81f6526dfbc68c812163ef7377eb0d8c0",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:31:33.224598Z"
+        }
+      ],
+      "evidence_class": "SOFTWARE_VALIDATION",
+      "experiment_id": "20261020T053132Z-tests-cd0c1082",
+      "finished_at_utc": "2026-10-20T05:31:33.298824Z",
+      "git_commit_sha": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.14.6",
+      "run_manifest_relative_path": "artifacts/runs/20261020T053132Z-tests-cd0c1082/run_manifest.json",
+      "run_manifest_sha256": "56b1e2317cc3f4225cfee5de46935f153736f18eb835bf1a1a3b3562a4e81f72",
+      "runner_sha256": "69b3f1897002d63d9c1cf460d69e3cd6e4f5046789aba6db870273457f919808",
+      "started_at_utc": "2026-10-20T05:31:32.677291Z",
+      "status": "PASS",
+      "test_count": 135,
+      "test_log_sha256": "70adf32add3a3c175757cd7b504cd2ffddcd81f557135fe97f5f5fb0eafb631a",
+      "verification": {
+        "archive_member_count": 103,
+        "archive_sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+        "errors": [],
+        "frozen_tag_file_checks": 0,
+        "reference_commit": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+        "scope": "Export byte preservation and archive/manifest consistency; no experiment replay in verify.",
+        "source_file_count": 27,
+        "status": "PASS"
+      }
+    },
+    {
+      "action": "replay",
+      "commands": [],
+      "evidence_class": "SOFTWARE_VALIDATION",
+      "experiment_id": "20261020T053138Z-replay-12d7c9db",
+      "finished_at_utc": null,
+      "git_commit_sha": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.14.6",
+      "run_manifest_relative_path": "artifacts/runs/20261020T053138Z-replay-12d7c9db/run_manifest.json",
+      "run_manifest_sha256": "603ed93114569d0e75dd3905142e84cfdeaca3b3f0c5522b752a33f0cc73c03a",
+      "runner_sha256": "69b3f1897002d63d9c1cf460d69e3cd6e4f5046789aba6db870273457f919808",
+      "started_at_utc": "2026-10-20T05:31:38.776756Z",
+      "status": "RUNNING"
+    },
+    {
+      "action": "smoke",
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "simulator.run_compare_hot_cold",
+            "--capacity-basis",
+            "write-working-set",
+            "--chips",
+            "4",
+            "--gc-threshold-ratio",
+            "0.05",
+            "--hot-threshold",
+            "8",
+            "--hot-window-writes",
+            "4096",
+            "--measurement-rounds",
+            "1",
+            "--overprovision-ratio",
+            "0.2",
+            "--page-size",
+            "4096",
+            "--pages-per-block",
+            "64",
+            "--reserved-gc-blocks",
+            "2",
+            "--warmup-rounds",
+            "1",
+            "--input",
+            "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/samples/sample.standard.csv",
+            "--output-dir",
+            "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053139Z-smoke-b2192a5c/output"
+          ],
+          "finished_at_utc": "2026-10-20T05:31:40.194889Z",
+          "log": "smoke.log",
+          "log_sha256": "95a42e1ba9a0d27a6677bba222dc1198bacbf062e91a1747305897516f038bec",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:31:40.058887Z"
+        }
+      ],
+      "evidence_class": "NEW_SMOKE",
+      "experiment_config": {
+        "evidence_class": "NEW_SMOKE",
+        "experiment_id": "new-smoke-sample-t8",
+        "input": "samples/sample.standard.csv",
+        "parameters": {
+          "capacity_basis": "write-working-set",
+          "chips": 4,
+          "gc_threshold_ratio": 0.05,
+          "hot_threshold": 8,
+          "hot_window_writes": 4096,
+          "measurement_rounds": 1,
+          "overprovision_ratio": 0.2,
+          "page_size": 4096,
+          "pages_per_block": 64,
+          "reserved_gc_blocks": 2,
+          "warmup_rounds": 1
+        }
+      },
+      "experiment_id": "20261020T053139Z-smoke-b2192a5c",
+      "finished_at_utc": "2026-10-20T05:31:40.198353Z",
+      "git_commit_sha": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+      "output_sha256": {
+        "output/baseline/baseline_summary.csv": "49cd74a51b8f917fecb2dca9356210697503fd950c6d5daafbc4224755a90a06",
+        "output/baseline/cumulative_summary.csv": "5f3ef734d0beacf0e9b024024ff8cc94e78bdcf02e3e392c454ce2b81f32b9c2",
+        "output/baseline/experiment_manifest.json": "978081868cae1728f237874bee15dd867a999d60a51f51c10f26e547d05833d2",
+        "output/baseline/gc_log.csv": "2b4b9816e294f09baac3e7d3f9e8800d4b03ffcb9e0fa8a48af1938e959464c9",
+        "output/baseline/latency_attribution.csv": "61d235539308f9ea3b9234b7cb86f60925d130b458d4e21d7c5f26a5cd1efbfe",
+        "output/baseline/latency_cause_summary.csv": "93435d08d12b00f3a67b07e380606b32f3fc13f54833bb1ea3e0dbac6c599178",
+        "output/baseline/latency_summary.csv": "c463208631836803eae442ff2786e4339d37fcceccd9ca8604fff7d3a7a27dd9",
+        "output/baseline/request_latency.csv": "041a0cb74f1dba10130160cd01b3df5c8582bda137fcb47786f1a142dbc321e0",
+        "output/baseline/resolved_config.json": "300a0104602915dbabfe691f3923c168096e9b3d5c2cba3e238887184216f501",
+        "output/baseline/tail_attribution_summary.csv": "3e09652cf7900d4dd9e7e314ff8dc5caa91fa11f1e68cf01203e79bcb1b6f375",
+        "output/baseline/warmup_gc_log.csv": "2b4b9816e294f09baac3e7d3f9e8800d4b03ffcb9e0fa8a48af1938e959464c9",
+        "output/baseline/warmup_summary.csv": "b8a87fc44ca45ea9bf7cc21d3b03804ed1bfd166a3f5006a88dcb763f2b4824d",
+        "output/comparison_manifest.json": "db1518be58b4aa164ac426d1149ea043f7b12521a95080b7cfea68ce71dc178f",
+        "output/hot_cold/cumulative_summary.csv": "b33867501cc5f85f3e8f291c4ff294d5d697f6099b06898ddcf7dc43c0f35855",
+        "output/hot_cold/experiment_manifest.json": "ab482e73119cf80f4774455019ca591a7672f137dd04089eea04ba62b0ad2749",
+        "output/hot_cold/gc_log.csv": "2b4b9816e294f09baac3e7d3f9e8800d4b03ffcb9e0fa8a48af1938e959464c9",
+        "output/hot_cold/hot_cold_summary.csv": "e7bd9329f4d4a8d091deb428e2a0b075ec575cfae2ee56cc896af49814aed912",
+        "output/hot_cold/latency_attribution.csv": "61d235539308f9ea3b9234b7cb86f60925d130b458d4e21d7c5f26a5cd1efbfe",
+        "output/hot_cold/latency_cause_summary.csv": "93435d08d12b00f3a67b07e380606b32f3fc13f54833bb1ea3e0dbac6c599178",
+        "output/hot_cold/latency_summary.csv": "c463208631836803eae442ff2786e4339d37fcceccd9ca8604fff7d3a7a27dd9",
+        "output/hot_cold/request_latency.csv": "041a0cb74f1dba10130160cd01b3df5c8582bda137fcb47786f1a142dbc321e0",
+        "output/hot_cold/resolved_config.json": "300a0104602915dbabfe691f3923c168096e9b3d5c2cba3e238887184216f501",
+        "output/hot_cold/tail_attribution_summary.csv": "3e09652cf7900d4dd9e7e314ff8dc5caa91fa11f1e68cf01203e79bcb1b6f375",
+        "output/hot_cold/warmup_gc_log.csv": "2b4b9816e294f09baac3e7d3f9e8800d4b03ffcb9e0fa8a48af1938e959464c9",
+        "output/hot_cold/warmup_summary.csv": "f94a1e9a08f9473d0280696a70d7c9b5b31d4319b80233d2f9d6c7b29bfd2ee4",
+        "output/policy_comparison.csv": "8a1edccc0b1015692d8c9dd2f80ed822274b0420fe0eb50a152260d06c94ee27"
+      },
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.14.6",
+      "run_manifest_relative_path": "artifacts/runs/20261020T053139Z-smoke-b2192a5c/run_manifest.json",
+      "run_manifest_sha256": "933c923adb8ede9e5cca91e50d7c1ec11aabf1f777a64e9aa6ff7bc80733b025",
+      "runner_sha256": "69b3f1897002d63d9c1cf460d69e3cd6e4f5046789aba6db870273457f919808",
+      "started_at_utc": "2026-10-20T05:31:39.944472Z",
+      "status": "PASS",
+      "verification": {
+        "archive_member_count": 103,
+        "archive_sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+        "errors": [],
+        "frozen_tag_file_checks": 0,
+        "reference_commit": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+        "scope": "Export byte preservation and archive/manifest consistency; no experiment replay in verify.",
+        "source_file_count": 27,
+        "status": "PASS"
+      }
+    },
+    {
+      "action": "verify",
+      "commands": [],
+      "evidence_class": "SOFTWARE_VALIDATION",
+      "experiment_id": "20261020T053423Z-verify-ff4219e8",
+      "finished_at_utc": "2026-10-20T05:34:23.461765Z",
+      "git_commit_sha": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.14.6",
+      "run_manifest_relative_path": "artifacts/runs/20261020T053423Z-verify-ff4219e8/run_manifest.json",
+      "run_manifest_sha256": "0c295adbef78bbf82f6c1f9246f11aee33aad366d51db022c2f0a6f4e7e4f44e",
+      "runner_sha256": "3e2a5acdfaf2894a9431e28d13e4bcf483a7ea772e21fe899da2de198e569eae",
+      "started_at_utc": "2026-10-20T05:34:23.290122Z",
+      "status": "PASS",
+      "verification": {
+        "archive_member_count": 103,
+        "archive_sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+        "errors": [],
+        "frozen_tag_file_checks": 0,
+        "reference_commit": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+        "scope": "Export byte preservation and archive/manifest consistency; no experiment replay in verify.",
+        "source_file_count": 27,
+        "status": "PASS"
+      }
+    },
+    {
+      "action": "tests",
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "finished_at_utc": "2026-10-20T05:37:20.533604Z",
+          "log": "tests.log",
+          "log_sha256": "7e8c7ffe6337595dc1c32d4163fe71d64bf6d49028671840e4c03eb9394ea9da",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:37:20.066288Z"
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "simulator.run_baseline",
+            "--help"
+          ],
+          "finished_at_utc": "2026-10-20T05:37:20.649078Z",
+          "log": "help-run_baseline.log",
+          "log_sha256": "ef0b391c529f65eeb3e2f7e4744fb40fd54275d68662b8678cbfa9a645f71ad1",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:37:20.534459Z"
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "simulator.run_compare_hot_cold",
+            "--help"
+          ],
+          "finished_at_utc": "2026-10-20T05:37:20.770787Z",
+          "log": "help-run_compare_hot_cold.log",
+          "log_sha256": "210077b586b9499233ba8e9b419651a81f6526dfbc68c812163ef7377eb0d8c0",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:37:20.650003Z"
+        }
+      ],
+      "evidence_class": "SOFTWARE_VALIDATION",
+      "experiment_id": "20261020T053719Z-tests-2f32a786",
+      "finished_at_utc": "2026-10-20T05:37:20.771707Z",
+      "git_commit_sha": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.14.6",
+      "run_manifest_relative_path": "artifacts/runs/20261020T053719Z-tests-2f32a786/run_manifest.json",
+      "run_manifest_sha256": "9445c3d665e3b82fc85055c924d163f7c2bf19046b27de144bd347017f97e84c",
+      "runner_sha256": "6e9fa0c0f2f964f83ca52dd5751e5aaef462649cf5dd11391e27fa8c3e82c5de",
+      "started_at_utc": "2026-10-20T05:37:19.912915Z",
+      "status": "PASS",
+      "test_count": 135,
+      "test_log_sha256": "7e8c7ffe6337595dc1c32d4163fe71d64bf6d49028671840e4c03eb9394ea9da",
+      "verification": {
+        "archive_member_count": 103,
+        "archive_sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+        "errors": [],
+        "frozen_tag_file_checks": 0,
+        "reference_commit": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+        "scope": "Export byte preservation and archive/manifest consistency; no experiment replay in verify.",
+        "source_file_count": 27,
+        "status": "PASS"
+      }
+    },
+    {
+      "action": "tests",
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "finished_at_utc": "2026-10-20T05:42:30.383221Z",
+          "log": "tests.log",
+          "log_sha256": "0a5edec2d1f42b634dbe07ab1f73e64ac1ee98d3a269306edebdba41c4a20893",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:42:30.040852Z"
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "simulator.run_baseline",
+            "--help"
+          ],
+          "finished_at_utc": "2026-10-20T05:42:30.462523Z",
+          "log": "help-run_baseline.log",
+          "log_sha256": "ef0b391c529f65eeb3e2f7e4744fb40fd54275d68662b8678cbfa9a645f71ad1",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:42:30.383853Z"
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "-m",
+            "simulator.run_compare_hot_cold",
+            "--help"
+          ],
+          "finished_at_utc": "2026-10-20T05:42:30.539950Z",
+          "log": "help-run_compare_hot_cold.log",
+          "log_sha256": "210077b586b9499233ba8e9b419651a81f6526dfbc68c812163ef7377eb0d8c0",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T05:42:30.463151Z"
+        }
+      ],
+      "evidence_class": "SOFTWARE_VALIDATION",
+      "experiment_id": "20261020T054229Z-tests-16c3b5ed",
+      "finished_at_utc": "2026-10-20T05:42:30.540536Z",
+      "git_commit_sha": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.14.6",
+      "run_manifest_relative_path": "artifacts/runs/20261020T054229Z-tests-16c3b5ed/run_manifest.json",
+      "run_manifest_sha256": "7fa84ec2291ce254cf02dc5094a030148311520478f38f97d3658e3e189e5b93",
+      "runner_sha256": "d2d1f916531692a404902eeeb187dc4c0c6680df3d2ce918c3a424cb463006c6",
+      "started_at_utc": "2026-10-20T05:42:29.913182Z",
+      "status": "PASS",
+      "test_count": 137,
+      "test_log_sha256": "0a5edec2d1f42b634dbe07ab1f73e64ac1ee98d3a269306edebdba41c4a20893",
+      "verification": {
+        "archive_member_count": 103,
+        "archive_sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+        "errors": [],
+        "frozen_tag_file_checks": 0,
+        "reference_commit": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+        "scope": "Export byte preservation and archive/manifest consistency; no experiment replay in verify.",
+        "source_file_count": 27,
+        "status": "PASS"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "status": "PARTIAL",
+  "updated_at_utc": "2026-10-20T05:43:23.922196+00:00"
+}

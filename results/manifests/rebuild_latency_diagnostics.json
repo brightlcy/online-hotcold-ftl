@@ -1,0 +1,38 @@
+{
+  "dataset": "Alibaba dev4 preserved 100k extract",
+  "diagnostic": "Original strict latency_nonnegative flag includes latency >= service without float tolerance. Replayed violations are quantified below; source and old manifests are preserved.",
+  "evidence_class": "HISTORICAL_REPLAY_DIAGNOSTIC",
+  "policies": [
+    {
+      "minimum_latency_minus_service_us": -4.656612873077393e-10,
+      "minimum_latency_us": 100.0,
+      "policy": "baseline",
+      "request_count": 100000,
+      "request_log_relative_path": "artifacts/runs/20261020T053138Z-replay-12d7c9db/device_4/baseline/request_latency.csv",
+      "request_log_sha256": "5ee11e0481ed3d6a710e11ef6f1800d2b7c623397ce8c6e0f1416aba39470e1f",
+      "violations": {
+        "completion_before_arrival": 0,
+        "latency_below_service": 2,
+        "negative_latency": 0,
+        "negative_queue_delay": 0,
+        "negative_service_time": 0
+      }
+    },
+    {
+      "minimum_latency_minus_service_us": -4.656612873077393e-10,
+      "minimum_latency_us": 100.0,
+      "policy": "hot_cold",
+      "request_count": 100000,
+      "request_log_relative_path": "artifacts/runs/20261020T053138Z-replay-12d7c9db/device_4/hot_cold/request_latency.csv",
+      "request_log_sha256": "b5e0ca0dc4197aa2d50a9673210ae5fea08038fd028d34e52db6f7bd2f095dbf",
+      "violations": {
+        "completion_before_arrival": 0,
+        "latency_below_service": 2,
+        "negative_latency": 0,
+        "negative_queue_delay": 0,
+        "negative_service_time": 0
+      }
+    }
+  ],
+  "schema_version": 1
+}

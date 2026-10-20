@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "compared_fields": [
+        "ssd_config",
+        "parameters",
+        "phase_plan",
+        "phase_results",
+        "trace_stats",
+        "latency_model"
+      ],
+      "device_id": 4,
+      "differences": [],
+      "original_manifest_sha256": "4bb62469bef28f74e2ae4a18b8d6468f3be30ad3890e8532c3c142e4ec2e9fd6",
+      "policy": "baseline",
+      "replay_manifest_sha256": "a6218d358e8dab153501960df383fba14c8e2e41c48c1f55ab1ccfbcf3bf4652",
+      "status": "PASS"
+    },
+    {
+      "compared_fields": [
+        "ssd_config",
+        "parameters",
+        "phase_plan",
+        "phase_results",
+        "trace_stats",
+        "latency_model"
+      ],
+      "device_id": 4,
+      "differences": [],
+      "original_manifest_sha256": "8d018095dde6940883d489323bec1bafab2a61f75f876228e38d7a7f5f691b7d",
+      "policy": "hot_cold",
+      "replay_manifest_sha256": "89d5810e8db925a2ccffd04b7f1fdc30388079c36cac0a62804d753cf56275f9",
+      "status": "PASS"
+    },
+    {
+      "compared_fields": [
+        "ssd_config",
+        "parameters",
+        "phase_plan",
+        "phase_results",
+        "trace_stats",
+        "latency_model"
+      ],
+      "device_id": 49,
+      "differences": [],
+      "original_manifest_sha256": "6fcbdb50276c63896737375255437046407d1701f7b319c2a5c007994e053d61",
+      "policy": "baseline",
+      "replay_manifest_sha256": "130c5d1de654532733006a410d4c456bfae4fceab9af6fd5930ab3f977ea1507",
+      "status": "PASS"
+    },
+    {
+      "compared_fields": [
+        "ssd_config",
+        "parameters",
+        "phase_plan",
+        "phase_results",
+        "trace_stats",
+        "latency_model"
+      ],
+      "device_id": 49,
+      "differences": [],
+      "original_manifest_sha256": "fdce4607abaeb5c001f82291ed6eb31b458f746ffd0633ed7adcf9dd93698451",
+      "policy": "hot_cold",
+      "replay_manifest_sha256": "22174ea50499ba984f8bd36b7b78b1bc3ac40aafc3f78d820978f18a6bd97c54",
+      "status": "PASS"
+    },
+    {
+      "compared_fields": [
+        "ssd_config",
+        "parameters",
+        "phase_plan",
+        "phase_results",
+        "trace_stats",
+        "latency_model"
+      ],
+      "device_id": 740,
+      "differences": [],
+      "original_manifest_sha256": "e65b33764cf8ad68b48fa9aa07ce8890293cc72a7657635fdc5e4a19b793a5e2",
+      "policy": "baseline",
+      "replay_manifest_sha256": "d4a8f7c789c50ca32076dde1e37bcfb14d840ca025538c687ff695551c986d27",
+      "status": "PASS"
+    }
+  ],
+  "evidence_class": "HISTORICAL_REPLAY",
+  "note": "Compares experiment controls and all phase counters in addition to the 24 policy-comparison metrics; source path and runtime timestamps may differ.",
+  "schema_version": 1,
+  "status": "PARTIAL"
+}
