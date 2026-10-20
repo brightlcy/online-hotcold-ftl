@@ -1,0 +1,5 @@
+workload,hot_host_write_pages,cold_host_write_pages,hot_write_share,hot_gc_migration_pages,cold_gc_migration_pages,placement_fallback_pages,hot_promotions,hot_demotions,hot_lpn_count,hot_labeled_blocks,cold_labeled_blocks,mixed_labeled_blocks
+MSR prxy_1,10308,102105,0.09169757946145018,76,115366,0,18,18,2,1,350,0
+Alibaba dev4,59176,55485,0.5160952721500772,43226,108683,0,5571,5571,219,72,195,0
+Alibaba dev49,5908,210804,0.027261988260917715,1754,195565,0,459,459,0,1,2135,0
+Alibaba dev740,0,347400,0.0,0,0,0,0,0,0,0,5518,0
