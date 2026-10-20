@@ -10,6 +10,8 @@ Trace-driven placement experiments that identify when recent write history reduc
 
 [Quick start](#quick-start) · [Methodology](docs/METHODOLOGY.md) · [Results and figures](docs/RESULTS.md) · [Reproducibility](docs/REPRODUCIBILITY.md) · [Limitations](docs/LIMITATIONS.md)
 
+[Executed validation and CI](docs/VALIDATION_STATUS.md)
+
 ## Quick start
 
 Python 3.14.6 is the rebuild's tested runtime; the simulator uses only the standard library. Run these commands inside this repository:
