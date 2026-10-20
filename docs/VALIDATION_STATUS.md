@@ -1,6 +1,6 @@
 # Executed validation snapshot
 
-Verified on 2026-10-20. [GitHub CI run](https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39377639312) **PASS**: core and figure jobs. Tested source commit: `37e75a85a30ae43416c76cfc68a9c7b0414ae2b6`. Subsequent documentation-only changes do not replace that recorded run identity.
+Verified on 2026-10-20. [GitHub CI run](https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39378621293) **PASS**: core and figure jobs. Tested source commit: `2d5d86236bba69f5ecd20ea4e89b9041816574f3`. Subsequent documentation-only changes do not replace that recorded run identity.
 
 ## Execution evidence
 
@@ -19,3 +19,5 @@ Five of six Alibaba policy replays completed. Both dev4/dev49 pairs match all 24
 See [reproducibility](REPRODUCIBILITY.md), [current compact reports](../results/manifests/), [figure data and captions](FIGURES.md), and [Red Team review](RED_TEAM.md). No algorithm or original research result was altered during the rebuild.
 
 The finalizer explicitly validates recorded executed-source hashes when available and labels legacy source metadata. The underlying research simulator and results are unchanged.
+
+Independent [focused finalizer review](FINALIZER_REVIEW.md) found no unresolved issue after executed-source and legacy-metadata checks were added.
