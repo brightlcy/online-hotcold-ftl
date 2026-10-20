@@ -1,0 +1,23 @@
+{
+  "capacity_basis": "write-working-set",
+  "chips": 4,
+  "device_ids": [
+    4,
+    49,
+    740
+  ],
+  "evidence_class": "HISTORICAL_REPLAY",
+  "experiment_id": "alibaba-100k-t8-replay",
+  "gc_threshold_ratio": 0.05,
+  "hot_threshold": 8,
+  "hot_window_writes": 4096,
+  "measurement_rounds": 1,
+  "metric_definition": "WAF = phase NAND page programs / phase host page writes; migration counts GC copied valid pages. Latency is analytical, not device measured.",
+  "overprovision_ratio": 0.2,
+  "page_size": 4096,
+  "pages_per_block": 64,
+  "reserved_gc_blocks": 2,
+  "seed": null,
+  "seed_note": "Deterministic trace replay; no random seed used.",
+  "warmup_rounds": 1
+}
