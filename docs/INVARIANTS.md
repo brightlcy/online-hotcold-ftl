@@ -11,7 +11,7 @@
 | N7 | Page/block out-of-range calls never mutate state | Address boundaries |
 | N8 | Reproducible mixed operations equal independent state/payload model | Seeded NAND property test |
 
-Mapping and GC invariants will be added with their interfaces before implementation. No unimplemented invariant is marked verified.
+Mapping and GC invariants below were added with their interfaces before implementation. Verified test mapping and evidence are in TEST_COVERAGE_MATRIX.md.
 
 | M1 | Each mapped LPN has exactly one VALID PPN and inverse owner | Mapping inverse and repeated overwrites |
 | M2 | Every VALID page has one owner; FREE/INVALID pages have no current owner | Consistency scan after each generated operation |

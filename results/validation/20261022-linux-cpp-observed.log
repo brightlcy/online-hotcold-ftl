@@ -1,0 +1,6 @@
+correctness (gcc, gcc, g++, OFF)	Run cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DATLAS_SANITIZERS=OFF	2026-10-22T07:27:14.4018513Z -- The CXX compiler identification is GNU 13.3.0
+correctness (gcc, gcc, g++, OFF)	Run ctest --test-dir build --output-on-failure	2026-10-22T07:27:32.0667422Z 100% tests passed, 0 tests failed out of 28
+correctness (gcc, gcc, g++, OFF)	Run python reproduce.py verify	2026-10-22T07:27:32.3535929Z PASS: /home/runner/work/online-hotcold-ftl/online-hotcold-ftl/artifacts/runs/20261022T072732Z-verify-2004dbe5/run_manifest.json
+correctness (clang, clang, clang++, ON)	Run cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DATLAS_SANITIZERS=ON	2026-10-22T07:27:18.7754550Z -- The CXX compiler identification is Clang 18.1.3
+correctness (clang, clang, clang++, ON)	Run ctest --test-dir build --output-on-failure	2026-10-22T07:27:41.6275951Z 100% tests passed, 0 tests failed out of 28
+correctness (clang, clang, clang++, ON)	Run python reproduce.py verify	2026-10-22T07:27:41.8991857Z PASS: /home/runner/work/online-hotcold-ftl/online-hotcold-ftl/artifacts/runs/20261022T072741Z-verify-3f29f172/run_manifest.json

@@ -8,8 +8,8 @@ Trace → future queue/scheduler → FTL mapping → future placement/GC/wear �
 
 - `Geometry`: owns checked positive channel/chip/die/block/page dimensions; maps structured addresses to flat PPNs in channel/chip/die/block/page order, page fastest. Products are checked before allocation. No planes in this version.
 - `Nand`: owns all pages and erase counters by value; no mutable state escapes. Payload is an opaque uint64 token for integrity tests, not a byte-accurate NAND sector. Program only FREE→VALID; read only VALID; invalidate only VALID→INVALID. Erase requires no VALID pages in the whole block, then resets FREE and increments once. Rejected operations leave state unchanged.
-- Next `PageMapping`: will own NAND and optional L2P/P2L arrays. Validate inputs and available space before programming. Program destination, update inverse mappings, invalidate previous data in a no-throw commit sequence. Reserve-aware GC is a later explicit contract.
-- Future `GarbageCollector`: deterministic greedy victim, preflight space, migrate valid payload and mappings, erase only after no valid data remains. Never erase live data to make an allocation succeed.
+- `PageMapping`: owns NAND and optional L2P/P2L arrays. Validate inputs and available space before programming. Program destination, update inverse mappings, invalidate previous data in a no-throw commit sequence. Reserve-aware GC is a later explicit contract.
+- GC transaction (`PageMapping::collect`) and separate pure greedy selector: deterministic victim, preflight space, migrate valid payload and mappings, erase only after no valid data remains. Never erase live data to make an allocation succeed.
 
 ## Memory, flow and ordering
 

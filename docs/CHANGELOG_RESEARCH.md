@@ -17,3 +17,7 @@ Implemented bounded L2P/P2L mapping after 8-test runtime RED; exhaustion preserv
 ## GC-01 verified
 
 Added deterministic greedy victim selection, explicit reserve trigger and migration/erase transaction after 8-test runtime RED. Final 28 CTest entries PASS normal and ASan+UBSan, including mapping differential and 1000-write repeated GC payload oracle/twin replay. Exact migrated/reclaimed counts and single erase verified. Core cpp coverage 95.54% lines / 92.62% branch outcomes. Clang analyzer and formatting pass. Python source/archive verification PASS at artifacts/runs/20261022T072230Z-verify-8373f7e5. New Linux GCC/Clang workflow prepared; execution not yet observed at this commit. Next: metrics/WAF and wear distribution tests, then wear-aware selection.
+
+## Private save and observed Linux CI
+
+Initial push was rejected by automatic approval review because explicit destination/branch/payload authorization was missing. Verified brightlcy ownership/private status/admin+push access, requested concrete approval, and user explicitly approved. Same private branch push then succeeded. Source 400ec1e passed Linux GCC and Clang ASan/UBSan CI, plus preserved Python core/figure CI. No main merge, public release, paper submission or paid resource was used. Final handoff update changes docs/evidence only; no extra test replay needed. Workspace-root checkpoint symlink points to the one canonical repository file.

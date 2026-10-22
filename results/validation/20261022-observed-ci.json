@@ -1,0 +1,420 @@
+{
+  "tested_source_commit": "400ec1e88fc9c5f30f354b59257c3310d73ba95b",
+  "runs": [
+    {
+      "run_id": 39740543341,
+      "conclusion": "success",
+      "headSha": "400ec1e88fc9c5f30f354b59257c3310d73ba95b",
+      "jobs": [
+        {
+          "completedAt": "2026-10-22T07:27:36Z",
+          "conclusion": "success",
+          "databaseId": 119696428985,
+          "name": "correctness (gcc, gcc, g++, OFF)",
+          "startedAt": "2026-10-22T07:26:54Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-22T07:26:56Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-22T07:26:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:26:57Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v6",
+              "number": 2,
+              "startedAt": "2026-10-22T07:26:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:13Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-22T07:26:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:15Z",
+              "conclusion": "success",
+              "name": "Run cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DATLAS_SANITIZERS=OFF",
+              "number": 4,
+              "startedAt": "2026-10-22T07:27:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:31Z",
+              "conclusion": "success",
+              "name": "Run cmake --build build --parallel 2",
+              "number": 5,
+              "startedAt": "2026-10-22T07:27:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:32Z",
+              "conclusion": "success",
+              "name": "Run ctest --test-dir build --output-on-failure",
+              "number": 6,
+              "startedAt": "2026-10-22T07:27:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:32Z",
+              "conclusion": "success",
+              "name": "Run python reproduce.py verify",
+              "number": 7,
+              "startedAt": "2026-10-22T07:27:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:32Z",
+              "conclusion": "skipped",
+              "name": "Run python -m pip install clang-format==20.1.8",
+              "number": 8,
+              "startedAt": "2026-10-22T07:27:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:33Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 9,
+              "startedAt": "2026-10-22T07:27:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:33Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 17,
+              "startedAt": "2026-10-22T07:27:33Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:34Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v6",
+              "number": 18,
+              "startedAt": "2026-10-22T07:27:33Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:34Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "startedAt": "2026-10-22T07:27:34Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543341/job/119696428985"
+        },
+        {
+          "completedAt": "2026-10-22T07:27:51Z",
+          "conclusion": "success",
+          "databaseId": 119696429098,
+          "name": "correctness (clang, clang, clang++, ON)",
+          "startedAt": "2026-10-22T07:26:54Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-22T07:26:56Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-22T07:26:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:26:58Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v6",
+              "number": 2,
+              "startedAt": "2026-10-22T07:26:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:13Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-22T07:26:58Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:19Z",
+              "conclusion": "success",
+              "name": "Run cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DATLAS_SANITIZERS=ON",
+              "number": 4,
+              "startedAt": "2026-10-22T07:27:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:39Z",
+              "conclusion": "success",
+              "name": "Run cmake --build build --parallel 2",
+              "number": 5,
+              "startedAt": "2026-10-22T07:27:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:41Z",
+              "conclusion": "success",
+              "name": "Run ctest --test-dir build --output-on-failure",
+              "number": 6,
+              "startedAt": "2026-10-22T07:27:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:41Z",
+              "conclusion": "success",
+              "name": "Run python reproduce.py verify",
+              "number": 7,
+              "startedAt": "2026-10-22T07:27:41Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:46Z",
+              "conclusion": "success",
+              "name": "Run python -m pip install clang-format==20.1.8",
+              "number": 8,
+              "startedAt": "2026-10-22T07:27:41Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:47Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 9,
+              "startedAt": "2026-10-22T07:27:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:47Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 17,
+              "startedAt": "2026-10-22T07:27:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:48Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v6",
+              "number": 18,
+              "startedAt": "2026-10-22T07:27:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:48Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "startedAt": "2026-10-22T07:27:48Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543341/job/119696429098"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543341"
+    },
+    {
+      "run_id": 39740543186,
+      "conclusion": "success",
+      "headSha": "400ec1e88fc9c5f30f354b59257c3310d73ba95b",
+      "jobs": [
+        {
+          "completedAt": "2026-10-22T07:27:19Z",
+          "conclusion": "success",
+          "databaseId": 119696428716,
+          "name": "core",
+          "startedAt": "2026-10-22T07:26:54Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-22T07:26:56Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-22T07:26:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:26:57Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v6",
+              "number": 2,
+              "startedAt": "2026-10-22T07:26:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:11Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-22T07:26:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:12Z",
+              "conclusion": "success",
+              "name": "Run python reproduce.py verify",
+              "number": 4,
+              "startedAt": "2026-10-22T07:27:11Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:12Z",
+              "conclusion": "success",
+              "name": "Run python reproduce.py tests",
+              "number": 5,
+              "startedAt": "2026-10-22T07:27:12Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:13Z",
+              "conclusion": "success",
+              "name": "Run python reproduce.py smoke",
+              "number": 6,
+              "startedAt": "2026-10-22T07:27:12Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:13Z",
+              "conclusion": "success",
+              "name": "Run python analysis/plot_results.py --verify-only",
+              "number": 7,
+              "startedAt": "2026-10-22T07:27:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:15Z",
+              "conclusion": "success",
+              "name": "Run python analysis/test_plot_validation.py",
+              "number": 8,
+              "startedAt": "2026-10-22T07:27:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:15Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 15,
+              "startedAt": "2026-10-22T07:27:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:15Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v6",
+              "number": 16,
+              "startedAt": "2026-10-22T07:27:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:16Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "startedAt": "2026-10-22T07:27:16Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543186/job/119696428716"
+        },
+        {
+          "completedAt": "2026-10-22T07:27:22Z",
+          "conclusion": "success",
+          "databaseId": 119696429112,
+          "name": "figures",
+          "startedAt": "2026-10-22T07:26:54Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-22T07:26:56Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-22T07:26:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:26:58Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v6",
+              "number": 2,
+              "startedAt": "2026-10-22T07:26:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:07Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-22T07:26:58Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:15Z",
+              "conclusion": "success",
+              "name": "Run python -m pip install -r analysis/requirements.txt",
+              "number": 4,
+              "startedAt": "2026-10-22T07:27:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:17Z",
+              "conclusion": "success",
+              "name": "Run python analysis/plot_results.py",
+              "number": 5,
+              "startedAt": "2026-10-22T07:27:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:18Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 6,
+              "startedAt": "2026-10-22T07:27:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:19Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 11,
+              "startedAt": "2026-10-22T07:27:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:19Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v6",
+              "number": 12,
+              "startedAt": "2026-10-22T07:27:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-22T07:27:19Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 13,
+              "startedAt": "2026-10-22T07:27:19Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543186/job/119696429112"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543186"
+    }
+  ],
+  "scope": "Linux GCC normal CTest and Clang ASan/UBSan CTest, format/static steps, preserved Python verification/tests/smoke and existing analysis/figures. No historical replay or new research holdout."
+}

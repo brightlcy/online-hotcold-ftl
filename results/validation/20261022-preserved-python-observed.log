@@ -1,0 +1,6 @@
+core	Run python reproduce.py verify	2026-10-22T07:27:12.1407488Z PASS: /home/runner/work/online-hotcold-ftl/online-hotcold-ftl/artifacts/runs/20261022T072712Z-verify-8c8b2637/run_manifest.json
+core	Run python reproduce.py tests	2026-10-22T07:27:12.9203101Z PASS: /home/runner/work/online-hotcold-ftl/online-hotcold-ftl/artifacts/runs/20261022T072712Z-tests-9ac3aeb9/run_manifest.json
+core	Run python reproduce.py smoke	2026-10-22T07:27:13.2179496Z PASS: /home/runner/work/online-hotcold-ftl/online-hotcold-ftl/artifacts/runs/20261022T072712Z-smoke-545c98e1/run_manifest.json
+core	Run python analysis/plot_results.py --verify-only	2026-10-22T07:27:13.3269122Z PASS: 8 archived policy runs, WAF denominators, migration identities, paired configs, 4 profiles, and 3 archived trace checksums.
+core	Run python analysis/test_plot_validation.py	2026-10-22T07:27:15.6330752Z Ran 5 tests in 2.231s
+figures	Run python analysis/plot_results.py	2026-10-22T07:27:17.1239478Z PASS: 8 archived policy runs, WAF denominators, migration identities, paired configs, 4 profiles, and 3 archived trace checksums.

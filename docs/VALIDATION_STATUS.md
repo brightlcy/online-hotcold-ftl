@@ -21,3 +21,11 @@ See [reproducibility](REPRODUCIBILITY.md), [current compact reports](../results/
 The finalizer explicitly validates recorded executed-source hashes when available and labels legacy source metadata. The underlying research simulator and results are unchanged.
 
 Independent [focused finalizer review](FINALIZER_REVIEW.md) found no unresolved issue after executed-source and legacy-metadata checks were added.
+
+## ATLAS-SSD core continuation — 2026-10-22
+
+Tested implementation commit: `400ec1e88fc9c5f30f354b59257c3310d73ba95b`, branch `atlas-ssd-resume-20261022`. macOS ARM64 normal + ASan/UBSan: 28/28 CTest PASS (27 C++ cases and 1 Python mapping differential). LLVM core cpp coverage 95.54% lines, 92.62% branch outcomes. Clang analyzer: 0 diagnostics; clang-format 20.1.8 PASS. clang-tidy NOT RUN because unavailable.
+
+[Linux C++ CI](https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543341): GCC normal and Clang ASan/UBSan jobs PASS, including 28 CTest entries each; formatting/static step and preservation check PASS. [Existing Python CI](https://github.com/brightlcy/online-hotcold-ftl/actions/runs/39740543186): core and figures PASS. New CI records are in results/validation/20261022-observed-ci.json. No new historical replay was triggered by these jobs; the existing workflow runs its small smoke separately.
+
+Bounded implementation-agent correctness reviews are labeled self-review. No independent reviewer, real hardware validation, new scientific holdout, new policy result, MQSim integration or paper completion is claimed.
