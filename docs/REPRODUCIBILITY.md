@@ -52,20 +52,10 @@ python3 -m simulator.run_baseline --help
 
 Do not silently edit archived result CSVs or the reference snapshot to make a failing replay pass. Record a new configuration, evidence class, source revision, and output directory instead. Figure regeneration is documented in the project README and figure provenance files; it uses preserved result data rather than smoke outputs.
 
-## Long replay checkpoint (2026-10-20)
+## Completed long replay (verified 2026-10-22)
 
-Five of six policy executions have finished: both policies for dev4 and dev49, plus dev740 Baseline. Dev4/dev49 each match all 24 archived comparison metrics; the five finished policy manifests also match the original controls and phase counters. **Dev740 Hot/Cold is RUNNING**, so the three-device replay remains **PARTIAL**. Its original archived execution took 12,307.53 seconds (about 3 hours 25 minutes); that duration is context rather than an ETA for this machine.
+The worker completed all six policy executions on 2026-10-20 at 06:21:40 UTC. On resumption, the retained manifest was PASS with three exit-zero commands. The existing output was finalized without launching a simulator. Dev4, dev49 and dev740 each match 24 archived comparison metrics, trace hashes, geometry, parameters and all phase counters. MSR remains BLOCKED because its extract is absent.
 
-[rebuild_long_run_checkpoint.json](../results/manifests/rebuild_long_run_checkpoint.json) records the live session, exact staging directory/log paths, completed work and resume procedure. Execution session `7682` is the available process handle; the sandbox did not expose its OS PID. The running worker automatically writes its final status and completion UTC to its own `run_manifest.json` after dev740 comparison finishes. Keep the existing staging directory available even when copying this project elsewhere. No automatic schedule was created.
+[Completion report](../results/manifests/rebuild_completed_hotcold_replay.json) and [updated run checkpoint](../results/manifests/rebuild_long_run_checkpoint.json) preserve the evidence and original output location. The request logs remain in that staging directory; do not remove it. This is historical replay validation, not a new holdout. The worker has legacy provenance: expected-source hashes and a preservation PASS, without a separate executed-source digest. Missing historical fields were not fabricated.
 
-To finish verification, first inspect that recorded worker manifest. When it reads `PASS`, run the following from the current project directory; the command reads completed output and **launches no simulation**:
-
-```sh
-python3 reproduce.py finalize \
-  --run-dir "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053138Z-replay-12d7c9db" \
-  --report results/manifests/rebuild_completed_hotcold_replay.json
-```
-
-The project-local path above identifies this private rebuild's retained worker, rather than a portable input requirement. The same `finalize` command can validate any completed run made by this runner using its actual `--run-dir`. It checks preserved source identity, all comparison metrics, trace checksum, geometry, parameters, phase plan/counters, trace statistics and latency-model settings. It also reports timing diagnostics. A new report is created without overwriting prior evidence. Retain that report and update the checkpoint/README validation status after success. A `RUNNING` manifest is rejected; do not restart the expensive run while it is live.
-
-Finalization requires a recorded PASS preservation check and compares separately recorded executed source digests when present. Legacy workers without that extra digest remain identifiable as legacy evidence; the new report explicitly records that limitation rather than filling in missing historical metadata. Original manifests are never edited.
+The finalizer rejects RUNNING manifests, checks source preservation and produces a new report exclusively. Repeating finalization with the same report path is intentionally rejected; read the saved report instead. No replay needs restarting.

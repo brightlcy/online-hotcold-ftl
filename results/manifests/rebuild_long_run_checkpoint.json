@@ -17,7 +17,7 @@
       "status": "PASS"
     }
   ],
-  "completed_policy_runs": 5,
+  "completed_policy_runs": 6,
   "evidence_class": "HISTORICAL_REPLAY",
   "experiment_id": "20261020T053138Z-replay-12d7c9db",
   "finalize_behavior": "After worker manifest status PASS, reads existing outputs and compares all metrics, trace SHA, phase controls/counters and latency diagnostics without launching any simulator. Creates a new immutable report; an existing report is not overwritten. This works from a canonical copy as long as the original staging output directory remains available.",
@@ -26,21 +26,17 @@
   "live_session_note": "Process handle is valid only while the current execution service retains it; this is not a simulator state checkpoint.",
   "os_pid": null,
   "os_pid_note": "The execution service exposed session ID 7682, not an OS PID; process enumeration is unavailable in this sandbox.",
-  "pending_policy_run": {
-    "current_output_relative_path": "artifacts/runs/20261020T053138Z-replay-12d7c9db/device_740/hot_cold",
-    "device_id": 740,
-    "historical_recorded_runtime_seconds": 12307.531493,
-    "historical_runtime_note": "The archived run took about 3 hours 25 minutes. This is context, not a forecast for the current runtime.",
-    "policy": "hot_cold"
-  },
+  "pending_policy_run": null,
   "poll_command_note": "Use tools.write_stdin(session_id=7682, chars=\"\", yield_time_ms=1000) while the execution session is retained. After it finishes, inspect the persisted run_manifest.json; a missing tool session is not proof of success.",
-  "portfolio_validation_status": "PARTIAL: 5 of 6 policy runs complete",
+  "portfolio_validation_status": "Alibaba replay VERIFIED: 6/6; MSR remains BLOCKED",
   "post_finalize": "On PASS, retain the new completed report and its SHA, update this checkpoint to COMPLETED with that link, update REPRODUCIBILITY.md/README validation level, commit the new evidence to the active project and update the dedicated Notion checkpoint. Do not rerun expensive experiments.",
-  "resume_from": "First inspect the existing worker manifest and retained session. If RUNNING, leave it running. If PASS, run finalize_command from the project directory. If FAIL, inspect command logs and preserved outputs before deciding on any rerun. If the execution service no longer retains the session and the manifest stays RUNNING, confirm whether the process survived before restarting. Never repeat completed dev4/dev49 tests/runs. Only if the process is confirmed gone and no completed dev740 output exists, rerun python3 reproduce.py replay --device 740.",
+  "resume_from": "Completed output finalization passed on 2026-10-22. Do not relaunch any Alibaba historical replay. Continue ATLAS-SSD C++ NAND on this development branch; MSR input remains missing.",
   "run_manifest_relative_path": "artifacts/runs/20261020T053138Z-replay-12d7c9db/run_manifest.json",
   "schema_version": 1,
   "scientific_claim_limit": "dev740 Hot/Cold remains archive-verified historical evidence until this replay finishes; no rerun success is claimed.",
   "source_state": "The frozen simulator is unchanged; no runtime optimization or counter patch was applied.",
-  "status": "RUNNING",
-  "updated_at_utc": "2026-10-20T05:52:39.237331+00:00"
+  "status": "COMPLETED",
+  "updated_at_utc": "2026-10-22T07:05:54.890900+00:00",
+  "completion_report": "results/manifests/rebuild_completed_hotcold_replay.json",
+  "completion_report_sha256": "9d1ffd7aafd37eda106b7caecacaba6a9ba1ad399bab299e26ce9a33e10ecebf"
 }

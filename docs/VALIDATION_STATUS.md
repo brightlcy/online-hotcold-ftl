@@ -14,7 +14,7 @@ Verified on 2026-10-20. [GitHub CI run](https://github.com/brightlcy/online-hotc
 
 ## Historical reproduction status
 
-Five of six Alibaba policy replays completed. Both dev4/dev49 pairs match all 24 compared metrics. dev740 Baseline also matches; the frozen Hot/Cold path is still running. MSR input is absent. Historical dev4 diagnostics contain a strict floating-point latency comparison flag; replay logs contain no negative total latency. Timing claims remain outside the headline.
+All six Alibaba policy replays completed on 2026-10-20 at 06:21:40 UTC. Existing output was finalized on 2026-10-22: dev4, dev49 and dev740 each match all 24 archived comparison metrics, plus both policies’ configuration and phase counters. [Completion report](../results/manifests/rebuild_completed_hotcold_replay.json). No simulation was rerun during finalization. MSR input remains absent. The legacy worker records expected-source hashes and a passing preservation check, without a separate executed-source digest. Historical dev4 strict floating-point latency flags are retained; timing is outside the headline.
 
 See [reproducibility](REPRODUCIBILITY.md), [current compact reports](../results/manifests/), [figure data and captions](FIGURES.md), and [Red Team review](RED_TEAM.md). No algorithm or original research result was altered during the rebuild.
 

@@ -1,0 +1,350 @@
+{
+  "archive_sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+  "blocked": [
+    {
+      "dataset": "MSR prxy_1 100k",
+      "reason": "Input extract absent.",
+      "status": "BLOCKED"
+    }
+  ],
+  "devices": [
+    {
+      "device_id": 4,
+      "differences": [],
+      "latency_diagnostics": {
+        "baseline": {
+          "minimum_latency_minus_service_us": -4.656612873077393e-10,
+          "request_count": 100000,
+          "request_log_sha256": "5ee11e0481ed3d6a710e11ef6f1800d2b7c623397ce8c6e0f1416aba39470e1f",
+          "violations": {
+            "completion_before_arrival": 0,
+            "latency_below_service": 2,
+            "negative_latency": 0,
+            "negative_queue_delay": 0,
+            "negative_service_time": 0
+          }
+        },
+        "hot_cold": {
+          "minimum_latency_minus_service_us": -4.656612873077393e-10,
+          "request_count": 100000,
+          "request_log_sha256": "b5e0ca0dc4197aa2d50a9673210ae5fea08038fd028d34e52db6f7bd2f095dbf",
+          "violations": {
+            "completion_before_arrival": 0,
+            "latency_below_service": 2,
+            "negative_latency": 0,
+            "negative_queue_delay": 0,
+            "negative_service_time": 0
+          }
+        }
+      },
+      "metric_count": 24,
+      "metrics": {
+        "baseline": {
+          "avg_latency_us": 36292.23414000024,
+          "avg_migrated_pages_per_gc": 45.8397212543554,
+          "direct_gc_requests": 6198.0,
+          "gc_count": 6314.0,
+          "gc_spillover_requests": 66957.0,
+          "max_latency_us": 1471768.0,
+          "p95_latency_us": 129760.0,
+          "p99_9_latency_us": 1191863.0,
+          "p99_gc_related_ratio": 1.0,
+          "p99_latency_us": 637842.0,
+          "valid_page_migrations": 289432.0,
+          "write_amplification_factor": 3.524241023538954
+        },
+        "hot_cold": {
+          "avg_latency_us": 19808.075890000062,
+          "avg_migrated_pages_per_gc": 36.472749099639856,
+          "direct_gc_requests": 4059.0,
+          "gc_count": 4165.0,
+          "gc_spillover_requests": 43274.0,
+          "max_latency_us": 1331187.0,
+          "p95_latency_us": 38960.0,
+          "p99_9_latency_us": 1139770.0,
+          "p99_gc_related_ratio": 1.0,
+          "p99_latency_us": 582785.0,
+          "valid_page_migrations": 151909.0,
+          "write_amplification_factor": 2.3248532630973044
+        },
+        "hot_cold_policy": {
+          "future_information_used": false,
+          "hot_threshold": 8,
+          "hot_window_writes": 4096
+        }
+      },
+      "original_manifest_member": "results/alibaba_compare_device_4_t8/comparison_manifest.json",
+      "original_manifest_sha256": "1550092d0e66fbb7965204901d68affcdb2b0884e939545ff17f2b7b76d16400",
+      "phase_configuration_checks": {
+        "baseline": {
+          "compared_fields": [
+            "ssd_config",
+            "parameters",
+            "phase_plan",
+            "phase_results",
+            "trace_stats",
+            "latency_model",
+            "input_trace.sha256"
+          ],
+          "differences": [],
+          "status": "PASS"
+        },
+        "hot_cold": {
+          "compared_fields": [
+            "ssd_config",
+            "parameters",
+            "phase_plan",
+            "phase_results",
+            "trace_stats",
+            "latency_model",
+            "input_trace.sha256"
+          ],
+          "differences": [],
+          "status": "PASS"
+        }
+      },
+      "replay_manifest_sha256": "787818f477c644b77195da0c069dff0a5dc56a7a23a417b59b9dc963e989d1ed",
+      "status": "PASS"
+    },
+    {
+      "device_id": 49,
+      "differences": [],
+      "latency_diagnostics": {
+        "baseline": {
+          "minimum_latency_minus_service_us": 0.0,
+          "request_count": 100000,
+          "request_log_sha256": "93e614e15e685f169ef2974d420c5a62f654850e8a9e2c62e7e6b4f189a6ca1e",
+          "violations": {
+            "completion_before_arrival": 0,
+            "latency_below_service": 0,
+            "negative_latency": 0,
+            "negative_queue_delay": 0,
+            "negative_service_time": 0
+          }
+        },
+        "hot_cold": {
+          "minimum_latency_minus_service_us": 0.0,
+          "request_count": 100000,
+          "request_log_sha256": "caeb470a27cecc90cf5a6610ef2da8081b0ed3be86536e649bdbb924f1f029a1",
+          "violations": {
+            "completion_before_arrival": 0,
+            "latency_below_service": 0,
+            "negative_latency": 0,
+            "negative_queue_delay": 0,
+            "negative_service_time": 0
+          }
+        }
+      },
+      "metric_count": 24,
+      "metrics": {
+        "baseline": {
+          "avg_latency_us": 695668.8674100029,
+          "avg_migrated_pages_per_gc": 33.51280247608329,
+          "direct_gc_requests": 6131.0,
+          "gc_count": 7108.0,
+          "gc_spillover_requests": 39487.0,
+          "max_latency_us": 7633345.0,
+          "p95_latency_us": 3013748.0,
+          "p99_9_latency_us": 6837531.0,
+          "p99_gc_related_ratio": 1.0,
+          "p99_latency_us": 5084350.0,
+          "valid_page_migrations": 238209.0,
+          "write_amplification_factor": 2.099196168186349
+        },
+        "hot_cold": {
+          "avg_latency_us": 583127.1137900027,
+          "avg_migrated_pages_per_gc": 30.502241459267275,
+          "direct_gc_requests": 5657.0,
+          "gc_count": 6469.0,
+          "gc_spillover_requests": 38917.0,
+          "max_latency_us": 7134225.0,
+          "p95_latency_us": 2513376.0,
+          "p99_9_latency_us": 6664451.0,
+          "p99_gc_related_ratio": 1.0,
+          "p99_latency_us": 5044940.0,
+          "valid_page_migrations": 197319.0,
+          "write_amplification_factor": 1.910512569677729
+        },
+        "hot_cold_policy": {
+          "future_information_used": false,
+          "hot_threshold": 8,
+          "hot_window_writes": 4096
+        }
+      },
+      "original_manifest_member": "results/alibaba_compare_device_49_t8/comparison_manifest.json",
+      "original_manifest_sha256": "8ba03c8ed550985141894f1ad0828664fdb22cd23d680d734f2fd0bfcf08e547",
+      "phase_configuration_checks": {
+        "baseline": {
+          "compared_fields": [
+            "ssd_config",
+            "parameters",
+            "phase_plan",
+            "phase_results",
+            "trace_stats",
+            "latency_model",
+            "input_trace.sha256"
+          ],
+          "differences": [],
+          "status": "PASS"
+        },
+        "hot_cold": {
+          "compared_fields": [
+            "ssd_config",
+            "parameters",
+            "phase_plan",
+            "phase_results",
+            "trace_stats",
+            "latency_model",
+            "input_trace.sha256"
+          ],
+          "differences": [],
+          "status": "PASS"
+        }
+      },
+      "replay_manifest_sha256": "693dc85463d573c263e0acbf356bed7c0b27c9ca3940f7ee845a4a7ce4a27943",
+      "status": "PASS"
+    },
+    {
+      "device_id": 740,
+      "differences": [],
+      "latency_diagnostics": {
+        "baseline": {
+          "minimum_latency_minus_service_us": 0.0,
+          "request_count": 100000,
+          "request_log_sha256": "3bce0e090372ef2ff5dcbe1059873751296455702e3df8c6dbc781af336278d4",
+          "violations": {
+            "completion_before_arrival": 0,
+            "latency_below_service": 0,
+            "negative_latency": 0,
+            "negative_queue_delay": 0,
+            "negative_service_time": 0
+          }
+        },
+        "hot_cold": {
+          "minimum_latency_minus_service_us": 0.0,
+          "request_count": 100000,
+          "request_log_sha256": "3bce0e090372ef2ff5dcbe1059873751296455702e3df8c6dbc781af336278d4",
+          "violations": {
+            "completion_before_arrival": 0,
+            "latency_below_service": 0,
+            "negative_latency": 0,
+            "negative_queue_delay": 0,
+            "negative_service_time": 0
+          }
+        }
+      },
+      "metric_count": 24,
+      "metrics": {
+        "baseline": {
+          "avg_latency_us": 563039.8611900007,
+          "avg_migrated_pages_per_gc": 0.0,
+          "direct_gc_requests": 4153.0,
+          "gc_count": 5339.0,
+          "gc_spillover_requests": 92193.0,
+          "max_latency_us": 2389123.0,
+          "p95_latency_us": 1717176.0,
+          "p99_9_latency_us": 2169893.0,
+          "p99_gc_related_ratio": 1.0,
+          "p99_latency_us": 2075164.0,
+          "valid_page_migrations": 0.0,
+          "write_amplification_factor": 1.0
+        },
+        "hot_cold": {
+          "avg_latency_us": 563039.8611900007,
+          "avg_migrated_pages_per_gc": 0.0,
+          "direct_gc_requests": 4153.0,
+          "gc_count": 5339.0,
+          "gc_spillover_requests": 92193.0,
+          "max_latency_us": 2389123.0,
+          "p95_latency_us": 1717176.0,
+          "p99_9_latency_us": 2169893.0,
+          "p99_gc_related_ratio": 1.0,
+          "p99_latency_us": 2075164.0,
+          "valid_page_migrations": 0.0,
+          "write_amplification_factor": 1.0
+        },
+        "hot_cold_policy": {
+          "future_information_used": false,
+          "hot_threshold": 8,
+          "hot_window_writes": 4096
+        }
+      },
+      "original_manifest_member": "results/alibaba_compare_device_740_t8/comparison_manifest.json",
+      "original_manifest_sha256": "28345cecd503a5eb6243054c02e90f2925e119f9308b4597e25b487f7301f2fb",
+      "phase_configuration_checks": {
+        "baseline": {
+          "compared_fields": [
+            "ssd_config",
+            "parameters",
+            "phase_plan",
+            "phase_results",
+            "trace_stats",
+            "latency_model",
+            "input_trace.sha256"
+          ],
+          "differences": [],
+          "status": "PASS"
+        },
+        "hot_cold": {
+          "compared_fields": [
+            "ssd_config",
+            "parameters",
+            "phase_plan",
+            "phase_results",
+            "trace_stats",
+            "latency_model",
+            "input_trace.sha256"
+          ],
+          "differences": [],
+          "status": "PASS"
+        }
+      },
+      "replay_manifest_sha256": "9582799356b119180eeb57fa40b5a8d416d644128f59bdcd5ca7cd5640a3cb0e",
+      "status": "PASS"
+    }
+  ],
+  "evidence_class": "HISTORICAL_REPLAY_VALIDATION",
+  "existing_run_dir": "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/PORTFOLIO_REVIEW_20261019/01_GITHUB_PRIVATE_REVIEW/experiments/online_hotcold_ftl/artifacts/runs/20261020T053138Z-replay-12d7c9db",
+  "historical_source_evidence": {
+    "expected_source_matches_current": true,
+    "historical_preservation_check": "PASS",
+    "interpretation": "Legacy worker records expected source and a passing preservation check, not a separate executed digest.",
+    "separate_executed_digest_recorded": false
+  },
+  "project": "online_hotcold_ftl",
+  "runner_sha256": "722374d5fc07620a8a8449ef38c3ba250956624c5c5eb0e2ff15985c42de378d",
+  "schema_version": 1,
+  "simulation_executed": false,
+  "source_run_manifest_sha256": "dcedaf8da8df514892a2db8ea822693b142d58341d4e58617ea370efed8ca24c",
+  "source_sha256": {
+    "simulator/__init__.py": "2ffa360901c102ae55c32e6a514ab97a5644b2409ad2128a5c188a46075adb3f",
+    "simulator/address.py": "d3cf5273ba6b113a1f233fb8553c8e7a69d8b248334fb208befbd6f1a45a8ce6",
+    "simulator/alibaba_ebs_2026.py": "93a89bd9170661b5fd9ed39718c2364427a562bc6f0362d4a5433f9eae267af8",
+    "simulator/alibaba_ebs_metadata.py": "207f3dbdab1814500556d0f63a02bf5ac05d695c673b4b6e075298ebe9146b21",
+    "simulator/alibaba_streaming.py": "519c230257fe4d49ea1ef941fcf80810cc3e6fdaa4905e269b76b942e1341c96",
+    "simulator/alibaba_trace.py": "a098490890fc2edc72a71948c966bc248b68e4f657cbc6a193aaa1a99f224020",
+    "simulator/alibaba_workload.py": "12a1d53f8e12298ef26476033d79ce95c87fdfdef58f39214fb2ae0f8cb5d25d",
+    "simulator/baseline_ftl.py": "0906212026abd3e0a78252bffb6bd54ace38084bdeb0e5bd3d99f90693b3eea8",
+    "simulator/config.py": "4d671e9f5bcbe1ff4b4b7fc7ba10e335ea9df5e087ff043c14d360cf8846b8fe",
+    "simulator/experiment_runner.py": "44426e06286a36078d5fc9c0ea7e2199427215a43adacc7837f27ec93670bd30",
+    "simulator/gc_policy.py": "797518975fbb786181c51b064a84bb0c1604cb69cbd963b66bca9893db27dc94",
+    "simulator/hot_cold_experiment.py": "0b886c19c700c05c9736e45d0782ea0a8c470e32f636dcab0f89450fa7c9cc34",
+    "simulator/hot_cold_ftl.py": "90e5af5b140333dfa27215eebc8ec614234e737ade22eaa445db7ae0cef76655",
+    "simulator/latency_attribution.py": "d8619d4442c0689fd08f3ee9cbb352ee4818cd05ba24229d05dfb866c794440f",
+    "simulator/latency_model.py": "011a7c6cc96d340429bcdcd952aba21875bffa9316f6bfc6e9c5dca06c616aff",
+    "simulator/metadata.py": "dc30c74d59d9a5eb5e5bfd1ca3aa187cba769d8c99ee3f5230f87862f6f4f916",
+    "simulator/run_analyze_alibaba.py": "f59bc1d45d7a52d728707d3720becd7fdb8bd7ff035c46b991b627930c750366",
+    "simulator/run_baseline.py": "1ec45b6684b590099d20e9cc4e7b8583f130e6d2a6ab5861bc5dcc7ed00950d5",
+    "simulator/run_compare_hot_cold.py": "6ac743f23318bfe37a9b86d75846a1cede69b8046f054d72320f3aff1e7a2811",
+    "simulator/run_convert_alibaba.py": "d4e85e94bed7f88e2bb54aab440e7db429d5106b87fdd625dc5454b3417e99c0",
+    "simulator/run_convert_alibaba_ebs.py": "bfc65e230785d2dce0699898d02b97a0768ddba1c140aa8c2ee12a96708e3129",
+    "simulator/run_extract_alibaba_devices.py": "ad6e651f01c1efc73e69ef4683f1f7a887d0449745491bb902b2028b6bee3280",
+    "simulator/run_hot_cold.py": "9fbf890c742775028be5815bf667c123eea13f1ada9b27b45d7d2b4295528303",
+    "simulator/run_profile_workload.py": "a8a82989f527ed942e6072f75549549c91508c8f611eb76bb743431d563f448a",
+    "simulator/run_select_alibaba_ebs.py": "2e49dda3c975db08a25f4120916778019eb3c2379dfd63208eb995019c41064c",
+    "simulator/trace_io.py": "0d67939e91e84c9f6c2bd779f1e73c92b2b0deaa4ed7d77cb69ebfcdb188e1fc",
+    "simulator/workload_profile.py": "7d181077d41f32d8efb0eed44335863fec6f5895df05fc049ce99f0ba39c2ffd"
+  },
+  "status": "PASS",
+  "validated_at_utc": "2026-10-22T07:02:57.249050Z"
+}
