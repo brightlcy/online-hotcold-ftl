@@ -1,0 +1,284 @@
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+[ 16%] Building CXX object CMakeFiles/atlas_core.dir/src/nand/nand.cpp.o
+[ 33%] Linking CXX static library libatlas_core.a
+[ 33%] Built target atlas_core
+[ 66%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/unit/nand_test.cpp.o
+[ 66%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/catch_main.cpp.o
+[ 83%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/property/nand_property_test.cpp.o
+[100%] Linking CXX executable atlas_tests
+[100%] Built target atlas_tests
+Test project /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+      Start  1: NAND geometry rejects zero dimensions and overflow
+ 1/11 Test  #1: NAND geometry rejects zero dimensions and overflow ...................***Failed    0.01 sec
+Filters: NAND geometry rejects zero dimensions and overflow
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND geometry rejects zero dimensions and overflow
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:11
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:12: FAILED:
+  REQUIRE_THROWS_AS( Geometry(0, 1, 1, 1, 1), std::invalid_argument )
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  2: NAND addresses round trip across every hierarchy boundary
+ 2/11 Test  #2: NAND addresses round trip across every hierarchy boundary ............***Failed    0.01 sec
+Filters: NAND addresses round trip across every hierarchy boundary
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND addresses round trip across every hierarchy boundary
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:22
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:22: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  3: NAND rejects every out of range address coordinate
+ 3/11 Test  #3: NAND rejects every out of range address coordinate ...................***Failed    0.01 sec
+Filters: NAND rejects every out of range address coordinate
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND rejects every out of range address coordinate
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:37
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:37: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  4: NAND initial pages are free and counters zero
+ 4/11 Test  #4: NAND initial pages are free and counters zero ........................***Failed    0.01 sec
+Filters: NAND initial pages are free and counters zero
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND initial pages are free and counters zero
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:48
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:48: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  5: NAND program preserves payload extremes
+ 5/11 Test  #5: NAND program preserves payload extremes ..............................***Failed    0.01 sec
+Filters: NAND program preserves payload extremes
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND program preserves payload extremes
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:59
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:59: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  6: NAND double program and reprogram invalid are rejected
+ 6/11 Test  #6: NAND double program and reprogram invalid are rejected ...............***Failed    0.01 sec
+Filters: NAND double program and reprogram invalid are rejected
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND double program and reprogram invalid are rejected
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:68
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:68: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  7: NAND invalidate rejects unreadable states and preserves neighbors
+ 7/11 Test  #7: NAND invalidate rejects unreadable states and preserves neighbors ....***Failed    0.01 sec
+Filters: NAND invalidate rejects unreadable states and preserves neighbors
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND invalidate rejects unreadable states and preserves neighbors
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:79
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:79: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  8: NAND erase resets complete block increments once and permits reuse
+ 8/11 Test  #8: NAND erase resets complete block increments once and permits reuse ...***Failed    0.01 sec
+Filters: NAND erase resets complete block increments once and permits reuse
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND erase resets complete block increments once and permits reuse
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:92
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:92: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start  9: NAND live block erase fails without partial mutation
+ 9/11 Test  #9: NAND live block erase fails without partial mutation .................***Failed    0.01 sec
+Filters: NAND live block erase fails without partial mutation
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND live block erase fails without partial mutation
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:113
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:113: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 10: NAND bounds errors never change valid data
+10/11 Test #10: NAND bounds errors never change valid data ...........................***Failed    0.01 sec
+Filters: NAND bounds errors never change valid data
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND bounds errors never change valid data
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:125
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/nand_test.cpp:125: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 11: NAND mixed operations match seeded independent page model
+11/11 Test #11: NAND mixed operations match seeded independent page model ............***Failed    0.01 sec
+Filters: NAND mixed operations match seeded independent page model
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+NAND mixed operations match seeded independent page model
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/property/nand_property_test.cpp:6
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/property/nand_property_test.cpp:6: FAILED:
+due to unexpected exception with message:
+  RED: NAND geometry not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+
+0% tests passed, 11 tests failed out of 11
+
+Total Test time (real) =   0.09 sec
+
+The following tests FAILED:
+	  1 - NAND geometry rejects zero dimensions and overflow (Failed)
+	  2 - NAND addresses round trip across every hierarchy boundary (Failed)
+	  3 - NAND rejects every out of range address coordinate (Failed)
+	  4 - NAND initial pages are free and counters zero (Failed)
+	  5 - NAND program preserves payload extremes (Failed)
+	  6 - NAND double program and reprogram invalid are rejected (Failed)
+	  7 - NAND invalidate rejects unreadable states and preserves neighbors (Failed)
+	  8 - NAND erase resets complete block increments once and permits reuse (Failed)
+	  9 - NAND live block erase fails without partial mutation (Failed)
+	 10 - NAND bounds errors never change valid data (Failed)
+	 11 - NAND mixed operations match seeded independent page model (Failed)
+Errors while running CTest

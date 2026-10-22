@@ -1,0 +1,3 @@
+# Differential compatibility specification
+
+Existing Python `simulator/metadata.py` has FREE→RESERVED→VALID and mappings; C++ NAND will expose FREE→VALID with no allocator reservation state. Compare only at committed operation boundaries. Python address geometry initially has chip/block/page; C++ adds channel/die. Use channel=die=1 for exact flat-address equivalence. Page state, invalidation, no-live-data erase and counters are eligible for exact comparison; payload tokens exist only in C++ so test separately. Allocation, GC victim/trigger, WAF and fallback are NOT yet declared equivalent. Do not compare research numbers before an explicit semantic matrix and event-level replay exist.

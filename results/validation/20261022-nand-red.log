@@ -1,0 +1,36 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000334
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+[ 16%] Building CXX object CMakeFiles/atlas_core.dir/src/nand/nand.cpp.o
+In file included from /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/src/nand/nand.cpp:1:
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/include/atlas/nand/nand.hpp:31:15: error: private field 'channels_' is not used [-Werror,-Wunused-private-field]
+   31 |   std::size_t channels_, chips_, dies_, blocks_, pages_, total_blocks_, total_pages_;
+      |               ^
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/include/atlas/nand/nand.hpp:31:26: error: private field 'chips_' is not used [-Werror,-Wunused-private-field]
+   31 |   std::size_t channels_, chips_, dies_, blocks_, pages_, total_blocks_, total_pages_;
+      |                          ^
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/include/atlas/nand/nand.hpp:31:34: error: private field 'dies_' is not used [-Werror,-Wunused-private-field]
+   31 |   std::size_t channels_, chips_, dies_, blocks_, pages_, total_blocks_, total_pages_;
+      |                                  ^
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/include/atlas/nand/nand.hpp:31:41: error: private field 'blocks_' is not used [-Werror,-Wunused-private-field]
+   31 |   std::size_t channels_, chips_, dies_, blocks_, pages_, total_blocks_, total_pages_;
+      |                                         ^
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/include/atlas/nand/nand.hpp:31:50: error: private field 'pages_' is not used [-Werror,-Wunused-private-field]
+   31 |   std::size_t channels_, chips_, dies_, blocks_, pages_, total_blocks_, total_pages_;
+      |                                                  ^
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/include/atlas/nand/nand.hpp:31:58: error: private field 'total_blocks_' is not used [-Werror,-Wunused-private-field]
+   31 |   std::size_t channels_, chips_, dies_, blocks_, pages_, total_blocks_, total_pages_;
+      |                                                          ^
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/include/atlas/nand/nand.hpp:31:73: error: private field 'total_pages_' is not used [-Werror,-Wunused-private-field]
+   31 |   std::size_t channels_, chips_, dies_, blocks_, pages_, total_blocks_, total_pages_;
+      |                                                                         ^
+7 errors generated.
+make[2]: *** [CMakeFiles/atlas_core.dir/src/nand/nand.cpp.o] Error 1
+make[1]: *** [CMakeFiles/atlas_core.dir/all] Error 2
+make: *** [all] Error 2

@@ -11,3 +11,7 @@ raw/
 *.bundle
 
 .venv-figures/
+
+build*/
+*.profraw
+*.profdata

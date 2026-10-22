@@ -1,0 +1,3 @@
+# Scientific validation rules
+
+Test pass proves the implemented contract only. C++ correctness is not independent scientific validation, novelty or hardware evidence. Every new run needs unique ID, source commit + dirty status, config/input hashes, seed, raw outputs, exit status and completion marker. Preserve failed/partial runs. Do not relabel original seeds 301–305 as untouched. No primary figure from untested aggregation. MQSim requires baseline build/run plus actual config→policy→placement path instrumentation and negative controls before external validation is claimed. No new experiments until the relevant correctness and novelty gates pass.

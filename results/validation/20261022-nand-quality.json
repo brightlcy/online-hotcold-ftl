@@ -1,0 +1,128 @@
+{
+  "timestamp_utc": "2026-10-22T07:11:49.760224+00:00",
+  "source_commit": "14178aa13b009304aaa44fcea92a179a67badedb",
+  "dirty": true,
+  "source_sha256": {
+    "include/atlas/nand/nand.hpp": "106b730d50af886ab1694c683c27b6af0ea3b9276f16168f5c2f0f2e3add2414",
+    "src/nand/nand.cpp": "ee59c93e12c9755d142f8b3f30f315d7fe3db447448d536977bfa67d64cacf5e",
+    "tests/cpp/catch_main.cpp": "7d6cb7a789affbecf7e3c4d86d7b9b01422446e6e6bf7314b3e6bebd1965c448",
+    "tests/cpp/unit/nand_test.cpp": "8360a7f7e091d4ddbe62590939febef4e79550dcd9e4e27de7e8c05d4ee183ad",
+    "tests/cpp/property/nand_property_test.cpp": "89f72ba628b1944fa7fd537184d80ab7a8e93648a483a34e21fef1e377b902c1"
+  },
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/atlas-validation-tools-20261022/bin/clang-format",
+        "--dry-run",
+        "--Werror",
+        "include/atlas/nand/nand.hpp",
+        "src/nand/nand.cpp",
+        "tests/cpp/catch_main.cpp",
+        "tests/cpp/unit/nand_test.cpp",
+        "tests/cpp/property/nand_property_test.cpp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "clang++",
+        "--analyze",
+        "-std=c++20",
+        "-Iinclude",
+        "src/nand/nand.cpp",
+        "-o",
+        "/private/tmp/atlas-nand-20261022.plist"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "build-coverage",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DATLAS_COVERAGE=ON"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "build-coverage",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "./build-coverage/atlas_tests"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "llvm-profdata",
+        "merge",
+        "-sparse",
+        "build-coverage/nand.profraw",
+        "-o",
+        "build-coverage/nand.profdata"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "llvm-cov",
+        "report",
+        "build-coverage/atlas_tests",
+        "-instr-profile=build-coverage/nand.profdata",
+        "src/nand/nand.cpp"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "static_analyzer_diagnostics": 0,
+  "coverage": {
+    "branches": {
+      "count": 38,
+      "covered": 37,
+      "notcovered": 1,
+      "percent": 97.36842105263158
+    },
+    "functions": {
+      "count": 15,
+      "covered": 15,
+      "percent": 100
+    },
+    "instantiations": {
+      "count": 15,
+      "covered": 15,
+      "percent": 100
+    },
+    "lines": {
+      "count": 83,
+      "covered": 81,
+      "percent": 97.59036144578313
+    },
+    "mcdc": {
+      "count": 0,
+      "covered": 0,
+      "notcovered": 0,
+      "percent": 0
+    },
+    "regions": {
+      "count": 74,
+      "covered": 73,
+      "notcovered": 1,
+      "percent": 98.64864864864865
+    }
+  },
+  "coverage_scope": "src/nand/nand.cpp, excludes vendored framework and tests",
+  "clang_tidy": "NOT RUN (unavailable)"
+}

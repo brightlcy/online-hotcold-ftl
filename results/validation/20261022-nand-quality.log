@@ -1,0 +1,46 @@
+$ /private/tmp/atlas-validation-tools-20261022/bin/clang-format --dry-run --Werror include/atlas/nand/nand.hpp src/nand/nand.cpp tests/cpp/catch_main.cpp tests/cpp/unit/nand_test.cpp tests/cpp/property/nand_property_test.cpp
+
+EXIT 0
+$ clang++ --analyze -std=c++20 -Iinclude src/nand/nand.cpp -o /private/tmp/atlas-nand-20261022.plist
+
+EXIT 0
+$ cmake -S . -B build-coverage -DCMAKE_BUILD_TYPE=Debug -DATLAS_COVERAGE=ON
+-- The CXX compiler identification is AppleClang 21.0.0.21000334
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage
+
+EXIT 0
+$ cmake --build build-coverage --parallel 2
+[ 16%] Building CXX object CMakeFiles/atlas_core.dir/src/nand/nand.cpp.o
+[ 33%] Linking CXX static library libatlas_core.a
+[ 33%] Built target atlas_core
+[ 66%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/catch_main.cpp.o
+[ 66%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/unit/nand_test.cpp.o
+[ 83%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/property/nand_property_test.cpp.o
+[100%] Linking CXX executable atlas_tests
+[100%] Built target atlas_tests
+
+EXIT 0
+$ ./build-coverage/atlas_tests
+===============================================================================
+All tests passed (29327 assertions in 11 test cases)
+
+
+EXIT 0
+$ xcrun llvm-profdata merge -sparse build-coverage/nand.profraw -o build-coverage/nand.profdata
+
+EXIT 0
+$ xcrun llvm-cov report build-coverage/atlas_tests -instr-profile=build-coverage/nand.profdata src/nand/nand.cpp
+Filename                                                                                               Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover    Branches   Missed Branches     Cover
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/src/nand/nand.cpp          74                 1    98.65%          15                 0   100.00%          83                 2    97.59%          38                 1    97.37%
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                       74                 1    98.65%          15                 0   100.00%          83                 2    97.59%          38                 1    97.37%
+
+EXIT 0

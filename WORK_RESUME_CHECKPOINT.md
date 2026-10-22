@@ -6,12 +6,12 @@
 - Work Session: resume-20261022
 - Repository: brightlcy/online-hotcold-ftl; /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl
 - Branch: atlas-ssd-resume-20261022
-- HEAD Commit: base 2bc94ffb070892d2265ec9bd013a2d16e8fecb6f; recovery changes pending commit
+- HEAD Commit: recovery commit 14178aa; NAND atomic commit contains this checkpoint (resolve with git log -1)
 - Latest Remote Push: prior main only; no session push
-- Working Tree Status: recovery docs/report in progress; original simulator untouched
+- Working Tree Status: NAND atomic unit verified; pending atomic commit; original simulator untouched
 - Execution Environment: macOS ARM64
 - Toolchain: Apple Clang 21; CMake/CTest 4.4.3; Python 3.14.6
-- Latest Verified Test Run: finalizer safety 9/9 PASS, 2026-10-22
+- Latest Verified Test Run: NAND 11/11 normal + 11/11 ASan/UBSan PASS; finalizer safety 9/9 PASS, 2026-10-22
 
 ## B. Current Phase
 - Phase ID: Gate 1 / NAND
@@ -26,26 +26,31 @@
 - FINALIZER-SAFETY: `python3 -B -m unittest discover -s tests -p test_reproduce.py -v`: 9 PASS, 0 FAIL, 0 SKIP.
 - Prior Python 139 Online/215 Host tests and 220-run reproduction: historical evidence, not newly executed.
 
+- NAND-01 VERIFIED: 11 Catch2/CTest cases, normal and ASan/UBSan pass. Source/coverage/static evidence in results/validation/20261022-nand-*. Self-review explicitly labeled. Commit containing this checkpoint.
+
 ## D. In Progress
-- Current Task: define C++ NAND contract and test-first unit
-- Current File: docs/CONTROLLER_ARCHITECTURE.md (not written yet)
-- Current Function / Class: atlas::Nand (not implemented)
-- Current Design Decision: extend existing repo on a separate branch; no new project/repo; frozen Python unchanged
-- What Is Already Implemented: Python references and replay tooling
-- What Remains Incomplete: C++ NAND, mapping, GC, wear, hint, placement, queue/timing and all new research
-- Last Known Good State: main 2bc94ff plus verified completed replay report
+- Current Task: next C++ FTL L2P/P2L mapping atomic unit
+- Current File: include/atlas/ftl/page_mapping.hpp (next, not yet created)
+- Current Function / Class: PageMapping (NOT IMPLEMENTED)
+- Current Design Decision: existing repo branch; keep original Python immutable; completed NAND token model is single-threaded/algorithmic
+- What Is Already Implemented: checked 5-level geometry, program/read/invalidate, live-block-safe erase, erase tracking
+- What Remains Incomplete: C++ mapping/GC/wear policy/hints/placement/timing and research gates
+- Last Known Good State: recovered historical replay + verified NAND unit
 
 ## E. Test Status
-- Build: C++ NOT RUN
-- Unit Tests: Python finalizer 9 PASS (2026-10-22); C++ NOT RUN
-- Integration Tests: completed historical output validation PASS; new C++ NOT RUN
-- Regression Tests: Python finalizer 9 PASS
-- Differential Tests: NOT RUN
-- Sanitizer: NOT RUN
-- Coverage: NOT MEASURED
-- Last Test Command: python3 -B -m unittest discover -s tests -p test_reproduce.py -v
-- Last Test Log: tool execution; committed report contains finalization evidence
-- Known Failures: none in executed tests; missing input and unimplemented work listed explicitly
+- Build: PASS, C++20 Apple Clang 21, warnings-as-errors
+- Unit Tests: 10 NAND unit + 1 seeded property case PASS; Python finalizer 9 PASS
+- Integration Tests: historical output finalization PASS; mapping/GC NOT RUN
+- Regression Tests: NAND double-program/live-erase/bounds cases PASS
+- Differential Tests: NOT RUN; semantic spec written
+- Sanitizer: ASan + UBSan PASS (11 cases), no reported issue
+- Coverage: NAND cpp 81/83 lines (97.59%), 37/38 branch outcomes (97.37%); erase-counter-overflow edge unexecuted
+- Formatting: clang-format 20.1.8 dry-run PASS
+- Static Analysis: Clang analyzer PASS, 0 diagnostics; clang-tidy unavailable/NOT RUN
+- Last Test Command: sh scripts/run_full_validation.sh
+- Last Test Log: results/validation/20261022-nand-green.log; nand-quality.log/json contain static/coverage/source hashes
+- Known Failures: no final failures; expected 11-case RED and initial stub warning logged in TEST_FAILURE_LOG.md
+- Linux/GCC CI: NOT RUN
 
 ## F. Research Status
 - Current Research Question: risk-aware placement with nonstationary external hints (candidate)
@@ -67,13 +72,13 @@
 - Required User Authorization: none for local continuation; no public release/submission/paid resources authorized
 
 ## H. EXACT RESUME POINT
-- Resume From: NAND test-first atomic unit after recovered historical replay
-- First File to Inspect: docs/IMPLEMENTATION_STATUS.md
+- Resume From: FTL mapping after verified NAND
+- First File to Inspect: docs/CONTROLLER_ARCHITECTURE.md and docs/INVARIANTS.md
 - First Command to Execute: git status --short --branch
-- Next Test: NAND FREE/VALID/INVALID, rejected program/invalidate/read, block erase safety, address bounds/overflow
-- Next Implementation Step: define architecture/invariants, add pinned Catch2/CMake tests, confirm RED, implement minimal C++ NAND, run CTest + ASan/UBSan
-- Expected Result: deterministic tested NAND contract; no unsupported hardware claims
-- Definition of Done: tests executed and pass, sanitizer executed, evidence saved, code reviewed, commit/checkpoint updated
+- Next Test: mapping initialization/read/unmapped errors, inverse ownership, repeated overwrite payload integrity, exhaustion preserves old mapping/data
+- Next Implementation Step: define bounded logical capacity + deterministic allocation contract; write failing mapping tests before implementation
+- Expected Result: atomic mapping updates with no old-data loss on failed writes
+- Definition of Done: runtime RED; unit/property/integration + ASan/UBSan GREEN; Python comparison only where semantics match; evidence/review/commit/checkpoint saved
 
 ## I. DO NOT REPEAT
 - Do not rerun Alibaba 6 completed historical policies or Host 220 final runs without a new reason.
@@ -86,6 +91,6 @@
 - This session finalization did not rerun simulation.
 
 ## K. NEXT WORK SESSION
-1. Complete NAND contract/tests/implementation with red/green and sanitizer evidence.
-2. Add FTL mapping tests, then minimum implementation preserving data/inverse mappings and exhaustion behavior.
-3. Add GC migration/erase tests only after mapping passes; perform semantic matrix before Python differential comparisons.
+1. Implement FTL L2P/P2L mapping test-first, including failed overwrite under physical exhaustion.
+2. Add small event-by-event differential test against existing Python mapping with documented reservation-state adapter.
+3. Define greedy GC preflight/migration/erase tests, then implement; do not start large performance studies yet.

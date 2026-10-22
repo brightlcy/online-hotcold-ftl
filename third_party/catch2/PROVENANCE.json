@@ -1,0 +1,22 @@
+{
+  "version": "v2.13.10",
+  "license": "BSL-1.0",
+  "files": {
+    "catch.hpp": {
+      "url": "https://raw.githubusercontent.com/catchorg/Catch2/v2.13.10/single_include/catch2/catch.hpp",
+      "sha256": "3725c0f0a75f376a5005dde31ead0feb8f7da7507644c201b814443de8355170"
+    },
+    "LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/catchorg/Catch2/v2.13.10/LICENSE.txt",
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    "Catch.cmake": {
+      "url": "https://raw.githubusercontent.com/catchorg/Catch2/v2.13.10/contrib/Catch.cmake",
+      "sha256": "75d4a692dbd343e1eb48316abd1395d91d306d71ef6ab77000075210bef4c76d"
+    },
+    "CatchAddTests.cmake": {
+      "url": "https://raw.githubusercontent.com/catchorg/Catch2/v2.13.10/contrib/CatchAddTests.cmake",
+      "sha256": "144bbf31a8be37964143ab638627976f7bd42076c89af8e2b50e83d70f2d3f49"
+    }
+  }
+}
