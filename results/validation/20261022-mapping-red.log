@@ -1,0 +1,233 @@
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+[ 11%] Building CXX object CMakeFiles/atlas_core.dir/src/ftl/page_mapping.cpp.o
+[ 22%] Linking CXX static library libatlas_core.a
+[ 33%] Built target atlas_core
+[ 55%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/integration/mapping_property_test.cpp.o
+[ 55%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/unit/mapping_test.cpp.o
+[ 66%] Linking CXX executable atlas_tests
+[100%] Built target atlas_tests
+Test project /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+      Start  1: NAND geometry rejects zero dimensions and overflow
+ 1/19 Test  #1: NAND geometry rejects zero dimensions and overflow .....................   Passed    0.01 sec
+      Start  2: NAND addresses round trip across every hierarchy boundary
+ 2/19 Test  #2: NAND addresses round trip across every hierarchy boundary ..............   Passed    0.01 sec
+      Start  3: NAND rejects every out of range address coordinate
+ 3/19 Test  #3: NAND rejects every out of range address coordinate .....................   Passed    0.01 sec
+      Start  4: NAND initial pages are free and counters zero
+ 4/19 Test  #4: NAND initial pages are free and counters zero ..........................   Passed    0.01 sec
+      Start  5: NAND program preserves payload extremes
+ 5/19 Test  #5: NAND program preserves payload extremes ................................   Passed    0.01 sec
+      Start  6: NAND double program and reprogram invalid are rejected
+ 6/19 Test  #6: NAND double program and reprogram invalid are rejected .................   Passed    0.01 sec
+      Start  7: NAND invalidate rejects unreadable states and preserves neighbors
+ 7/19 Test  #7: NAND invalidate rejects unreadable states and preserves neighbors ......   Passed    0.01 sec
+      Start  8: NAND erase resets complete block increments once and permits reuse
+ 8/19 Test  #8: NAND erase resets complete block increments once and permits reuse .....   Passed    0.01 sec
+      Start  9: NAND live block erase fails without partial mutation
+ 9/19 Test  #9: NAND live block erase fails without partial mutation ...................   Passed    0.01 sec
+      Start 10: NAND bounds errors never change valid data
+10/19 Test #10: NAND bounds errors never change valid data .............................   Passed    0.01 sec
+      Start 11: NAND mixed operations match seeded independent page model
+11/19 Test #11: NAND mixed operations match seeded independent page model ..............   Passed    0.01 sec
+      Start 12: FTL rejects invalid logical capacity
+12/19 Test #12: FTL rejects invalid logical capacity ...................................***Failed    0.01 sec
+Filters: FTL rejects invalid logical capacity
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL rejects invalid logical capacity
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:9
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:10: FAILED:
+  REQUIRE_THROWS_AS( PageMapping(Geometry(1, 1, 1, 2, 2), 0), std::invalid_argument )
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 13: FTL starts unmapped and rejects missing reads
+13/19 Test #13: FTL starts unmapped and rejects missing reads ..........................***Failed    0.01 sec
+Filters: FTL starts unmapped and rejects missing reads
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL starts unmapped and rejects missing reads
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:14
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:14: FAILED:
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 14: FTL first last logical pages keep distinct inverse owners
+14/19 Test #14: FTL first last logical pages keep distinct inverse owners ..............***Failed    0.01 sec
+Filters: FTL first last logical pages keep distinct inverse owners
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL first last logical pages keep distinct inverse owners
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:28
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:28: FAILED:
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 15: FTL overwrite invalidates only former owner and preserves other data
+15/19 Test #15: FTL overwrite invalidates only former owner and preserves other data ...***Failed    0.01 sec
+Filters: FTL overwrite invalidates only former owner and preserves other data
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL overwrite invalidates only former owner and preserves other data
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:42
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:42: FAILED:
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 16: FTL repeated overwrite never aliases a current mapping
+16/19 Test #16: FTL repeated overwrite never aliases a current mapping .................***Failed    0.01 sec
+Filters: FTL repeated overwrite never aliases a current mapping
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL repeated overwrite never aliases a current mapping
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:58
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:58: FAILED:
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 17: FTL full NAND rejected overwrite preserves old data and mappings
+17/19 Test #17: FTL full NAND rejected overwrite preserves old data and mappings .......***Failed    0.01 sec
+Filters: FTL full NAND rejected overwrite preserves old data and mappings
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL full NAND rejected overwrite preserves old data and mappings
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:71
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:71: FAILED:
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 18: FTL logical and physical bounds errors consume no page
+18/19 Test #18: FTL logical and physical bounds errors consume no page .................***Failed    0.01 sec
+Filters: FTL logical and physical bounds errors consume no page
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL logical and physical bounds errors consume no page
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:85
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/mapping_test.cpp:85: FAILED:
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 19: FTL seeded writes and failed writes preserve logical payload oracle
+19/19 Test #19: FTL seeded writes and failed writes preserve logical payload oracle ....***Failed    0.01 sec
+Filters: FTL seeded writes and failed writes preserve logical payload oracle
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FTL seeded writes and failed writes preserve logical payload oracle
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/mapping_property_test.cpp:6
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/mapping_property_test.cpp:6: FAILED:
+due to unexpected exception with message:
+  RED: mapping not implemented
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+
+58% tests passed, 8 tests failed out of 19
+
+Total Test time (real) =   0.12 sec
+
+The following tests FAILED:
+	 12 - FTL rejects invalid logical capacity (Failed)
+	 13 - FTL starts unmapped and rejects missing reads (Failed)
+	 14 - FTL first last logical pages keep distinct inverse owners (Failed)
+	 15 - FTL overwrite invalidates only former owner and preserves other data (Failed)
+	 16 - FTL repeated overwrite never aliases a current mapping (Failed)
+	 17 - FTL full NAND rejected overwrite preserves old data and mappings (Failed)
+	 18 - FTL logical and physical bounds errors consume no page (Failed)
+	 19 - FTL seeded writes and failed writes preserve logical payload oracle (Failed)
+Errors while running CTest

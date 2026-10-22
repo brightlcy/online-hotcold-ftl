@@ -9,3 +9,7 @@ AI assistance: Codex performed state recovery, report reconciliation and will ge
 ## NAND-01 verified
 
 Added checked C++ geometry and NAND state/token model with Catch2/CTest. Recorded expected runtime RED then GREEN 11 cases, ASan/UBSan, deterministic 1500-operation reference-model property case, formatting and Clang static analysis. cpp coverage 97.59% lines / 97.37% branch outcomes; counter-overflow edge disclosed. AI generated design/tests/implementation; self-review is not independent validation. Historical source/archive unchanged. Next: mapping TDD.
+
+## Mapping-01 verified
+
+Implemented bounded L2P/P2L mapping after 8-test runtime RED; exhaustion preserves old data. Added payload oracle and event-level Python metadata comparison (19 traces, 662 committed events), negative control, sanitizer and quality evidence. Combined core coverage 94.44%/91.89%. No GC, WAF or timing equivalence is claimed. Next: greedy GC contract, preflight and migration integrity tests.

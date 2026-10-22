@@ -1,0 +1,108 @@
+-- Found Python3: /opt/homebrew/Caskroom/miniforge/base/bin/python3.14 (found version "3.14.7") found components: Interpreter
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+[ 27%] Built target atlas_core
+[ 36%] Building CXX object CMakeFiles/atlas_mapping_probe.dir/tests/differential/mapping_probe.cpp.o
+[ 90%] Built target atlas_tests
+[100%] Linking CXX executable atlas_mapping_probe
+[100%] Built target atlas_mapping_probe
+Test project /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+      Start  1: NAND geometry rejects zero dimensions and overflow
+ 1/20 Test  #1: NAND geometry rejects zero dimensions and overflow .....................   Passed    0.01 sec
+      Start  2: NAND addresses round trip across every hierarchy boundary
+ 2/20 Test  #2: NAND addresses round trip across every hierarchy boundary ..............   Passed    0.01 sec
+      Start  3: NAND rejects every out of range address coordinate
+ 3/20 Test  #3: NAND rejects every out of range address coordinate .....................   Passed    0.01 sec
+      Start  4: NAND initial pages are free and counters zero
+ 4/20 Test  #4: NAND initial pages are free and counters zero ..........................   Passed    0.01 sec
+      Start  5: NAND program preserves payload extremes
+ 5/20 Test  #5: NAND program preserves payload extremes ................................   Passed    0.01 sec
+      Start  6: NAND double program and reprogram invalid are rejected
+ 6/20 Test  #6: NAND double program and reprogram invalid are rejected .................   Passed    0.01 sec
+      Start  7: NAND invalidate rejects unreadable states and preserves neighbors
+ 7/20 Test  #7: NAND invalidate rejects unreadable states and preserves neighbors ......   Passed    0.01 sec
+      Start  8: NAND erase resets complete block increments once and permits reuse
+ 8/20 Test  #8: NAND erase resets complete block increments once and permits reuse .....   Passed    0.01 sec
+      Start  9: NAND live block erase fails without partial mutation
+ 9/20 Test  #9: NAND live block erase fails without partial mutation ...................   Passed    0.01 sec
+      Start 10: NAND bounds errors never change valid data
+10/20 Test #10: NAND bounds errors never change valid data .............................   Passed    0.01 sec
+      Start 11: NAND mixed operations match seeded independent page model
+11/20 Test #11: NAND mixed operations match seeded independent page model ..............   Passed    0.03 sec
+      Start 12: FTL rejects invalid logical capacity
+12/20 Test #12: FTL rejects invalid logical capacity ...................................   Passed    0.01 sec
+      Start 13: FTL starts unmapped and rejects missing reads
+13/20 Test #13: FTL starts unmapped and rejects missing reads ..........................   Passed    0.01 sec
+      Start 14: FTL first last logical pages keep distinct inverse owners
+14/20 Test #14: FTL first last logical pages keep distinct inverse owners ..............   Passed    0.01 sec
+      Start 15: FTL overwrite invalidates only former owner and preserves other data
+15/20 Test #15: FTL overwrite invalidates only former owner and preserves other data ...   Passed    0.01 sec
+      Start 16: FTL repeated overwrite never aliases a current mapping
+16/20 Test #16: FTL repeated overwrite never aliases a current mapping .................   Passed    0.01 sec
+      Start 17: FTL full NAND rejected overwrite preserves old data and mappings
+17/20 Test #17: FTL full NAND rejected overwrite preserves old data and mappings .......   Passed    0.01 sec
+      Start 18: FTL logical and physical bounds errors consume no page
+18/20 Test #18: FTL logical and physical bounds errors consume no page .................   Passed    0.01 sec
+      Start 19: FTL seeded writes and failed writes preserve logical payload oracle
+19/20 Test #19: FTL seeded writes and failed writes preserve logical payload oracle ....   Passed    0.01 sec
+      Start 20: mapping_python_differential
+20/20 Test #20: mapping_python_differential ............................................   Passed    0.45 sec
+
+100% tests passed out of 20
+
+Total Test time (real) =   0.69 sec
+-- Found Python3: /opt/homebrew/Caskroom/miniforge/base/bin/python3.14 (found version "3.14.7") found components: Interpreter
+-- Configuring done (0.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-sanitize
+[ 27%] Built target atlas_core
+[ 36%] Building CXX object CMakeFiles/atlas_mapping_probe.dir/tests/differential/mapping_probe.cpp.o
+[ 90%] Built target atlas_tests
+[100%] Linking CXX executable atlas_mapping_probe
+[100%] Built target atlas_mapping_probe
+Test project /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-sanitize
+      Start  1: NAND geometry rejects zero dimensions and overflow
+ 1/20 Test  #1: NAND geometry rejects zero dimensions and overflow .....................   Passed    0.05 sec
+      Start  2: NAND addresses round trip across every hierarchy boundary
+ 2/20 Test  #2: NAND addresses round trip across every hierarchy boundary ..............   Passed    0.03 sec
+      Start  3: NAND rejects every out of range address coordinate
+ 3/20 Test  #3: NAND rejects every out of range address coordinate .....................   Passed    0.03 sec
+      Start  4: NAND initial pages are free and counters zero
+ 4/20 Test  #4: NAND initial pages are free and counters zero ..........................   Passed    0.03 sec
+      Start  5: NAND program preserves payload extremes
+ 5/20 Test  #5: NAND program preserves payload extremes ................................   Passed    0.03 sec
+      Start  6: NAND double program and reprogram invalid are rejected
+ 6/20 Test  #6: NAND double program and reprogram invalid are rejected .................   Passed    0.03 sec
+      Start  7: NAND invalidate rejects unreadable states and preserves neighbors
+ 7/20 Test  #7: NAND invalidate rejects unreadable states and preserves neighbors ......   Passed    0.05 sec
+      Start  8: NAND erase resets complete block increments once and permits reuse
+ 8/20 Test  #8: NAND erase resets complete block increments once and permits reuse .....   Passed    0.05 sec
+      Start  9: NAND live block erase fails without partial mutation
+ 9/20 Test  #9: NAND live block erase fails without partial mutation ...................   Passed    0.05 sec
+      Start 10: NAND bounds errors never change valid data
+10/20 Test #10: NAND bounds errors never change valid data .............................   Passed    0.03 sec
+      Start 11: NAND mixed operations match seeded independent page model
+11/20 Test #11: NAND mixed operations match seeded independent page model ..............   Passed    0.05 sec
+      Start 12: FTL rejects invalid logical capacity
+12/20 Test #12: FTL rejects invalid logical capacity ...................................   Passed    0.03 sec
+      Start 13: FTL starts unmapped and rejects missing reads
+13/20 Test #13: FTL starts unmapped and rejects missing reads ..........................   Passed    0.03 sec
+      Start 14: FTL first last logical pages keep distinct inverse owners
+14/20 Test #14: FTL first last logical pages keep distinct inverse owners ..............   Passed    0.03 sec
+      Start 15: FTL overwrite invalidates only former owner and preserves other data
+15/20 Test #15: FTL overwrite invalidates only former owner and preserves other data ...   Passed    0.03 sec
+      Start 16: FTL repeated overwrite never aliases a current mapping
+16/20 Test #16: FTL repeated overwrite never aliases a current mapping .................   Passed    0.03 sec
+      Start 17: FTL full NAND rejected overwrite preserves old data and mappings
+17/20 Test #17: FTL full NAND rejected overwrite preserves old data and mappings .......   Passed    0.03 sec
+      Start 18: FTL logical and physical bounds errors consume no page
+18/20 Test #18: FTL logical and physical bounds errors consume no page .................   Passed    0.04 sec
+      Start 19: FTL seeded writes and failed writes preserve logical payload oracle
+19/20 Test #19: FTL seeded writes and failed writes preserve logical payload oracle ....   Passed    0.09 sec
+      Start 20: mapping_python_differential
+20/20 Test #20: mapping_python_differential ............................................   Passed    1.25 sec
+
+100% tests passed out of 20
+
+Total Test time (real) =   2.00 sec

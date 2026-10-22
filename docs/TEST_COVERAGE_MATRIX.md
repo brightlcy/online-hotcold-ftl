@@ -14,3 +14,5 @@ NAND implementation: src/nand/nand.cpp and include/atlas/nand/nand.hpp. Tests: t
 | Mixed repeated transitions | N8 | seeded independent page model, seed 0xA71A52026, 1500 operations | nand-green.log |
 
 Paths in the last column resolve under results/validation/20261022-. Coverage and source hashes: 20261022-nand-quality.json. RED logs preserved separately. Uint64 erase overflow is defensively checked but cannot be reached through a feasible public-API run; disclose the uncovered edge. No fabricated counter injection is added solely for coverage.
+
+Mapping implementation: src/ftl/page_mapping.cpp. Seven mapping unit cases plus one seeded integration/property case cover M1–M5; tests/cpp/unit/mapping_test.cpp, tests/cpp/integration/mapping_property_test.cpp. Rejected exhaustion and out-of-range writes preserve data. 19 C++ cases + 1 Python differential CTest pass normal and ASan/UBSan. Differential: 19 traces/662 committed events + altered-mapping negative control. Combined core coverage 136/144 lines (94.44%), 68/74 branch outcomes (91.89%). Consistency-audit internal-corruption throws and erase-overflow are uncovered; see quality JSON per-file summaries.

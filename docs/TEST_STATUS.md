@@ -5,3 +5,5 @@
 Prior Python 139/215 tests and final 220-run byte comparison are historical verified records; not rerun in this session. MSR: BLOCKED (missing extract). MQSim: NOT RUN.
 
 NAND-01: 11/11 CTest PASS normal and ASan/UBSan (0 skipped); 1500 deterministic mixed operations in property case. clang-format 20.1.8 PASS. Clang static analyzer: 0 diagnostics (clang-tidy unavailable). LLVM core cpp coverage: 81/83 lines, 37/38 branch outcomes. Uncovered: impractical uint64 erase-counter-overflow throw. RED 11/11 failed before implementation; stubs initially failed unused-field -Werror and were adjusted without disabling warnings. Logs and source hashes preserved. Next mapping unit not yet started.
+
+Mapping-01: 8 new mapping cases first failed at runtime (existing NAND 11 remained PASS). Final 19 C++ cases plus 1 differential CTest pass normal and ASan/UBSan. Differential compares 19 traces/662 events to frozen Python metadata primitives; no GC equivalence claimed. Formatting and Clang analyzer pass; combined core coverage 94.44% lines / 91.89% branch outcomes. Logs: 20261022-mapping-red/green/differential-green/quality.*.

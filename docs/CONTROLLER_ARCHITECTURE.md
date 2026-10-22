@@ -26,3 +26,7 @@ Geometry encode/decode and page operations O(1); initial allocation O(P+B); eras
 ## Test strategy and expansion gate
 
 Catch2/CTest: normal, boundary, illegal transitions, nonmutation on failure, payload extremes, multi-dimensional addresses and deterministic randomized reference-state comparisons. Run ASan+UBSan and compile-time warnings/static analysis. Complete NAND before mapping, mapping before GC. Preserve red/green logs and requirement→invariant→test links. Linux CI is only verified after observing a remote pass.
+
+## Mapping atomic contract (before implementation)
+
+PageMapping owns NAND and fixed-size optional L2P/P2L vectors. Logical capacity must be 1..physical pages. Empty read throws out_of_range, bad LPN/PPN throws out_of_range, physical exhaustion throws NoFreePage (runtime_error). A failed overwrite must leave the old payload and both directions intact. Only successful writes consume one FREE page. Deterministic circular next-free scan; before GC the order equals the Python FIFO. No automatic GC in this atomic unit. Constructor validates logical capacity before NAND allocation. Per-write operations after NAND program do not allocate: optional<size_t> assignment and validated invalidate cannot throw. Allocation scans O(P), mapping/read O(1), invariant audit O(P+L).

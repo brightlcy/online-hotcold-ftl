@@ -12,3 +12,9 @@
 | N8 | Reproducible mixed operations equal independent state/payload model | Seeded NAND property test |
 
 Mapping and GC invariants will be added with their interfaces before implementation. No unimplemented invariant is marked verified.
+
+| M1 | Each mapped LPN has exactly one VALID PPN and inverse owner | Mapping inverse and repeated overwrites |
+| M2 | Every VALID page has one owner; FREE/INVALID pages have no current owner | Consistency scan after each generated operation |
+| M3 | Read returns last successful write token | Overwrite/integration/property cases |
+| M4 | Exhausted/invalid writes leave all mapping, payload and state unchanged | Failed overwrite and bad LPN tests |
+| M5 | No GC or hidden erase during basic mapping writes | Exhaustion counter checks |

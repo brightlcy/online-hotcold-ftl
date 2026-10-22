@@ -1,3 +1,9 @@
 # Differential compatibility specification
 
 Existing Python `simulator/metadata.py` has FREE→RESERVED→VALID and mappings; C++ NAND will expose FREE→VALID with no allocator reservation state. Compare only at committed operation boundaries. Python address geometry initially has chip/block/page; C++ adds channel/die. Use channel=die=1 for exact flat-address equivalence. Page state, invalidation, no-live-data erase and counters are eligible for exact comparison; payload tokens exist only in C++ so test separately. Allocation, GC victim/trigger, WAF and fallback are NOT yet declared equivalent. Do not compare research numbers before an explicit semantic matrix and event-level replay exist.
+
+## Mapping boundary compatibility now exercised
+
+Test probe uses 1 channel × 1 chip × 1 die × 2 blocks × 4 pages, bounded LPNs 0..2. Original Python metadata allows sparse external LPNs, so bounded-address validation is not claimed equivalent. At each successful committed write compare L2P, P2L, page state, free pages and erase counts exactly. Python adapter uses original FTLMetadata primitives and allocates before invalidating; RESERVED is internal to that transaction and is never compared as a committed state. Exhaustion must return NO_SPACE without invalidation in the adapter. This validates the primitives' composed mapping contract, not the full Python BaselineFTL write/GC path. No GC/trigger/victim/WAF/timing/payload equivalence is claimed. Payload integrity is independently checked by the C++ integration oracle.
+
+Cases: single, repeated overwrite through exhaustion, mixed LPNs and 16 fixed correctness seeds 1701..1716, 662 total committed events. Validator rejects an altered mapping as a negative control. A mismatch saves the input/case and first event diagnostic under ignored artifacts with a fresh directory.

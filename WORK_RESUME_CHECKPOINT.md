@@ -6,12 +6,12 @@
 - Work Session: resume-20261022
 - Repository: brightlcy/online-hotcold-ftl; /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl
 - Branch: atlas-ssd-resume-20261022
-- HEAD Commit: recovery commit 14178aa; NAND atomic commit contains this checkpoint (resolve with git log -1)
+- HEAD Commit: 4460929 (verified NAND); mapping atomic unit verified; atomic commit contains this checkpoint
 - Latest Remote Push: prior main only; no session push
 - Working Tree Status: NAND atomic unit verified; pending atomic commit; original simulator untouched
 - Execution Environment: macOS ARM64
 - Toolchain: Apple Clang 21; CMake/CTest 4.4.3; Python 3.14.6
-- Latest Verified Test Run: NAND 11/11 normal + 11/11 ASan/UBSan PASS; finalizer safety 9/9 PASS, 2026-10-22
+- Latest Verified Test Run: 20/20 CTest normal + ASan/UBSan PASS (19 C++ + Python differential); finalizer safety 9/9 PASS, 2026-10-22
 
 ## B. Current Phase
 - Phase ID: Gate 1 / NAND
@@ -28,28 +28,29 @@
 
 - NAND-01 VERIFIED: 11 Catch2/CTest cases, normal and ASan/UBSan pass. Source/coverage/static evidence in results/validation/20261022-nand-*. Self-review explicitly labeled. Commit containing this checkpoint.
 
+- Mapping-01 VERIFIED: 8 new C++ cases + event-level Python differential; normal/sanitizer/quality logs saved. Commit containing this checkpoint.
+
 ## D. In Progress
-- Current Task: next C++ FTL L2P/P2L mapping atomic unit
-- Current File: include/atlas/ftl/page_mapping.hpp (next, not yet created)
-- Current Function / Class: PageMapping (NOT IMPLEMENTED)
+- Current Task: next greedy GC atomic unit; mapping VERIFIED
+- Current File: docs/CONTROLLER_ARCHITECTURE.md; define GC contract before tests
+- Current Function / Class: PageMapping VERIFIED; GarbageCollector not implemented
 - Current Design Decision: existing repo branch; keep original Python immutable; completed NAND token model is single-threaded/algorithmic
 - What Is Already Implemented: checked 5-level geometry, program/read/invalidate, live-block-safe erase, erase tracking
-- What Remains Incomplete: C++ mapping/GC/wear policy/hints/placement/timing and research gates
+- What Remains Incomplete: C++ GC/wear policy/hints/placement/timing and research gates
 - Last Known Good State: recovered historical replay + verified NAND unit
 
 ## E. Test Status
-- Build: PASS, C++20 Apple Clang 21, warnings-as-errors
-- Unit Tests: 10 NAND unit + 1 seeded property case PASS; Python finalizer 9 PASS
-- Integration Tests: historical output finalization PASS; mapping/GC NOT RUN
-- Regression Tests: NAND double-program/live-erase/bounds cases PASS
-- Differential Tests: NOT RUN; semantic spec written
-- Sanitizer: ASan + UBSan PASS (11 cases), no reported issue
-- Coverage: NAND cpp 81/83 lines (97.59%), 37/38 branch outcomes (97.37%); erase-counter-overflow edge unexecuted
-- Formatting: clang-format 20.1.8 dry-run PASS
-- Static Analysis: Clang analyzer PASS, 0 diagnostics; clang-tidy unavailable/NOT RUN
+- Build: PASS, C++20 Apple Clang 21 warnings-as-errors
+- Unit/Property/Integration: 19 C++ cases PASS
+- Differential Tests: PASS, 19 traces / 662 committed events vs original Python metadata; one altered-mapping negative control rejected
+- CTest: 20/20 PASS normal, 20/20 PASS ASan+UBSan, 0 skipped
+- Regression: failed overwrite/bad LPN/live-block erase/data integrity PASS
+- Python finalizer safety: 9/9 PASS this session
+- Coverage: combined core cpp 136/144 lines (94.44%), 68/74 branch outcomes (91.89%); internal-corruption audit throws and erase-overflow edge unexecuted
+- Formatting: clang-format 20.1.8 PASS; static Clang analyzer 0 diagnostics; clang-tidy NOT RUN (unavailable)
 - Last Test Command: sh scripts/run_full_validation.sh
-- Last Test Log: results/validation/20261022-nand-green.log; nand-quality.log/json contain static/coverage/source hashes
-- Known Failures: no final failures; expected 11-case RED and initial stub warning logged in TEST_FAILURE_LOG.md
+- Last Test Log: results/validation/20261022-mapping-differential-green.log; mapping-quality.json/log includes source hashes and coverage
+- Known Failures: no final failures; expected red logs retained
 - Linux/GCC CI: NOT RUN
 
 ## F. Research Status
@@ -72,13 +73,13 @@
 - Required User Authorization: none for local continuation; no public release/submission/paid resources authorized
 
 ## H. EXACT RESUME POINT
-- Resume From: FTL mapping after verified NAND
-- First File to Inspect: docs/CONTROLLER_ARCHITECTURE.md and docs/INVARIANTS.md
+- Resume From: greedy GC after verified NAND + mapping
+- First File to Inspect: docs/CONTROLLER_ARCHITECTURE.md
 - First Command to Execute: git status --short --branch
-- Next Test: mapping initialization/read/unmapped errors, inverse ownership, repeated overwrite payload integrity, exhaustion preserves old mapping/data
-- Next Implementation Step: define bounded logical capacity + deterministic allocation contract; write failing mapping tests before implementation
-- Expected Result: atomic mapping updates with no old-data loss on failed writes
-- Definition of Done: runtime RED; unit/property/integration + ASan/UBSan GREEN; Python comparison only where semantics match; evidence/review/commit/checkpoint saved
+- Next Test: deterministic victim selection; migrate only live pages; failed preflight preserves all state; repeated GC payload/inverse-map integrity
+- Next Implementation Step: define pure selection contract and controller-owned migration transaction, write tests and confirm RED before code
+- Expected Result: safe reclamation and exact migration/erase accounting on small traces
+- Definition of Done: runtime RED, relevant normal/sanitizer/property tests GREEN, saved logs/review/commit/checkpoint
 
 ## I. DO NOT REPEAT
 - Do not rerun Alibaba 6 completed historical policies or Host 220 final runs without a new reason.
@@ -91,6 +92,6 @@
 - This session finalization did not rerun simulation.
 
 ## K. NEXT WORK SESSION
-1. Implement FTL L2P/P2L mapping test-first, including failed overwrite under physical exhaustion.
-2. Add small event-by-event differential test against existing Python mapping with documented reservation-state adapter.
-3. Define greedy GC preflight/migration/erase tests, then implement; do not start large performance studies yet.
+1. Implement deterministic greedy GC test-first with migration preflight and payload preservation under pressure.
+2. Verify exact migrated-page/erase accounting and reserve-trigger boundaries before any long simulation.
+3. Add Linux GCC/Clang CI and retain observed results; new research/novelty and MQSim remain separate incomplete gates.
