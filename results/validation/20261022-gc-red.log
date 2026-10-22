@@ -1,0 +1,263 @@
+-- Configuring done (0.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+[ 14%] Building CXX object CMakeFiles/atlas_core.dir/src/ftl/page_mapping.cpp.o
+[ 14%] Building CXX object CMakeFiles/atlas_core.dir/src/gc/greedy.cpp.o
+[ 21%] Linking CXX static library libatlas_core.a
+[ 28%] Built target atlas_core
+[ 35%] Building CXX object CMakeFiles/atlas_mapping_probe.dir/tests/differential/mapping_probe.cpp.o
+[ 42%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/unit/mapping_test.cpp.o
+[ 50%] Linking CXX executable atlas_mapping_probe
+[ 50%] Built target atlas_mapping_probe
+[ 57%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/integration/mapping_property_test.cpp.o
+[ 64%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/unit/gc_test.cpp.o
+[ 71%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/integration/gc_integration_test.cpp.o
+[ 78%] Linking CXX executable atlas_tests
+[100%] Built target atlas_tests
+Test project /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build
+      Start  1: NAND geometry rejects zero dimensions and overflow
+ 1/28 Test  #1: NAND geometry rejects zero dimensions and overflow ...................................   Passed    0.01 sec
+      Start  2: NAND addresses round trip across every hierarchy boundary
+ 2/28 Test  #2: NAND addresses round trip across every hierarchy boundary ............................   Passed    0.01 sec
+      Start  3: NAND rejects every out of range address coordinate
+ 3/28 Test  #3: NAND rejects every out of range address coordinate ...................................   Passed    0.01 sec
+      Start  4: NAND initial pages are free and counters zero
+ 4/28 Test  #4: NAND initial pages are free and counters zero ........................................   Passed    0.01 sec
+      Start  5: NAND program preserves payload extremes
+ 5/28 Test  #5: NAND program preserves payload extremes ..............................................   Passed    0.01 sec
+      Start  6: NAND double program and reprogram invalid are rejected
+ 6/28 Test  #6: NAND double program and reprogram invalid are rejected ...............................   Passed    0.01 sec
+      Start  7: NAND invalidate rejects unreadable states and preserves neighbors
+ 7/28 Test  #7: NAND invalidate rejects unreadable states and preserves neighbors ....................   Passed    0.01 sec
+      Start  8: NAND erase resets complete block increments once and permits reuse
+ 8/28 Test  #8: NAND erase resets complete block increments once and permits reuse ...................   Passed    0.01 sec
+      Start  9: NAND live block erase fails without partial mutation
+ 9/28 Test  #9: NAND live block erase fails without partial mutation .................................   Passed    0.01 sec
+      Start 10: NAND bounds errors never change valid data
+10/28 Test #10: NAND bounds errors never change valid data ...........................................   Passed    0.01 sec
+      Start 11: NAND mixed operations match seeded independent page model
+11/28 Test #11: NAND mixed operations match seeded independent page model ............................   Passed    0.02 sec
+      Start 12: FTL rejects invalid logical capacity
+12/28 Test #12: FTL rejects invalid logical capacity .................................................   Passed    0.01 sec
+      Start 13: FTL starts unmapped and rejects missing reads
+13/28 Test #13: FTL starts unmapped and rejects missing reads ........................................   Passed    0.01 sec
+      Start 14: FTL first last logical pages keep distinct inverse owners
+14/28 Test #14: FTL first last logical pages keep distinct inverse owners ............................   Passed    0.01 sec
+      Start 15: FTL overwrite invalidates only former owner and preserves other data
+15/28 Test #15: FTL overwrite invalidates only former owner and preserves other data .................   Passed    0.01 sec
+      Start 16: FTL repeated overwrite never aliases a current mapping
+16/28 Test #16: FTL repeated overwrite never aliases a current mapping ...............................   Passed    0.01 sec
+      Start 17: FTL full NAND rejected overwrite preserves old data and mappings
+17/28 Test #17: FTL full NAND rejected overwrite preserves old data and mappings .....................   Passed    0.01 sec
+      Start 18: FTL logical and physical bounds errors consume no page
+18/28 Test #18: FTL logical and physical bounds errors consume no page ...............................   Passed    0.01 sec
+      Start 19: FTL seeded writes and failed writes preserve logical payload oracle
+19/28 Test #19: FTL seeded writes and failed writes preserve logical payload oracle ..................   Passed    0.01 sec
+      Start 20: GC victim requires garbage and space outside victim
+20/28 Test #20: GC victim requires garbage and space outside victim ..................................***Failed    0.01 sec
+Filters: GC victim requires garbage and space outside victim
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC victim requires garbage and space outside victim
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:7
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:8: FAILED:
+  REQUIRE_FALSE( atlas::select_greedy_victim({}) )
+due to unexpected exception with message:
+  RED: GC victim selection
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 21: GC greedy selection ranks garbage then live copies then block id
+21/28 Test #21: GC greedy selection ranks garbage then live copies then block id .....................***Failed    0.01 sec
+Filters: GC greedy selection ranks garbage then live copies then block id
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC greedy selection ranks garbage then live copies then block id
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:17
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:20: FAILED:
+  REQUIRE( atlas::select_greedy_victim(garbage) == 1 )
+due to unexpected exception with message:
+  RED: GC victim selection
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 22: GC free space summary overflow is rejected
+22/28 Test #22: GC free space summary overflow is rejected ...........................................***Failed    0.01 sec
+Filters: GC free space summary overflow is rejected
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC free space summary overflow is rejected
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:28
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:31: FAILED:
+  REQUIRE_THROWS_AS( atlas::select_greedy_victim(blocks), std::overflow_error )
+due to unexpected exception with message:
+  RED: GC victim selection
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 23: GC trigger honors inclusive reserve boundary and rejects impossible reserve
+23/28 Test #23: GC trigger honors inclusive reserve boundary and rejects impossible reserve ..........***Failed    0.01 sec
+Filters: GC trigger honors inclusive reserve boundary and rejects impossible reserve
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC trigger honors inclusive reserve boundary and rejects impossible reserve
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:34
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/unit/gc_test.cpp:36: FAILED:
+  REQUIRE_FALSE( f.needs_gc(4) )
+due to unexpected exception with message:
+  RED: GC trigger
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 24: GC migrates only live pages preserves payload and reclaims exact garbage
+24/28 Test #24: GC migrates only live pages preserves payload and reclaims exact garbage .............***Failed    0.01 sec
+Filters: GC migrates only live pages preserves payload and reclaims exact garbage
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC migrates only live pages preserves payload and reclaims exact garbage
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:6
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:6: FAILED:
+due to unexpected exception with message:
+  RED: GC migration
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 25: GC fully invalid block is erased without any live copy
+25/28 Test #25: GC fully invalid block is erased without any live copy ...............................***Failed    0.01 sec
+Filters: GC fully invalid block is erased without any live copy
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC fully invalid block is erased without any live copy
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:30
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:30: FAILED:
+due to unexpected exception with message:
+  RED: GC migration
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 26: GC blocked preflight preserves all live data mapping and erase counts
+26/28 Test #26: GC blocked preflight preserves all live data mapping and erase counts ................***Failed    0.01 sec
+Filters: GC blocked preflight preserves all live data mapping and erase counts
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC blocked preflight preserves all live data mapping and erase counts
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:47
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:49: FAILED:
+  REQUIRE_THROWS_AS( f.collect(), atlas::GcBlocked )
+due to unexpected exception with message:
+  RED: GC migration
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 27: GC seeded repeated pressure replay preserves all tokens and deterministic mappings
+27/28 Test #27: GC seeded repeated pressure replay preserves all tokens and deterministic mappings ...***Failed    0.01 sec
+Filters: GC seeded repeated pressure replay preserves all tokens and deterministic mappings
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+atlas_tests is a Catch v2.13.10 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+GC seeded repeated pressure replay preserves all tokens and deterministic
+mappings
+-------------------------------------------------------------------------------
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:71
+...............................................................................
+
+/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/tests/cpp/integration/gc_integration_test.cpp:71: FAILED:
+due to unexpected exception with messages:
+  seed=7466559807526 step=0
+  RED: GC trigger
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+
+
+      Start 28: mapping_python_differential
+28/28 Test #28: mapping_python_differential ..........................................................   Passed    0.39 sec
+
+71% tests passed, 8 tests failed out of 28
+
+Total Test time (real) =   0.61 sec
+
+The following tests FAILED:
+	 20 - GC victim requires garbage and space outside victim (Failed)
+	 21 - GC greedy selection ranks garbage then live copies then block id (Failed)
+	 22 - GC free space summary overflow is rejected (Failed)
+	 23 - GC trigger honors inclusive reserve boundary and rejects impossible reserve (Failed)
+	 24 - GC migrates only live pages preserves payload and reclaims exact garbage (Failed)
+	 25 - GC fully invalid block is erased without any live copy (Failed)
+	 26 - GC blocked preflight preserves all live data mapping and erase counts (Failed)
+	 27 - GC seeded repeated pressure replay preserves all tokens and deterministic mappings (Failed)
+Errors while running CTest

@@ -13,3 +13,7 @@ Added checked C++ geometry and NAND state/token model with Catch2/CTest. Recorde
 ## Mapping-01 verified
 
 Implemented bounded L2P/P2L mapping after 8-test runtime RED; exhaustion preserves old data. Added payload oracle and event-level Python metadata comparison (19 traces, 662 committed events), negative control, sanitizer and quality evidence. Combined core coverage 94.44%/91.89%. No GC, WAF or timing equivalence is claimed. Next: greedy GC contract, preflight and migration integrity tests.
+
+## GC-01 verified
+
+Added deterministic greedy victim selection, explicit reserve trigger and migration/erase transaction after 8-test runtime RED. Final 28 CTest entries PASS normal and ASan+UBSan, including mapping differential and 1000-write repeated GC payload oracle/twin replay. Exact migrated/reclaimed counts and single erase verified. Core cpp coverage 95.54% lines / 92.62% branch outcomes. Clang analyzer and formatting pass. Python source/archive verification PASS at artifacts/runs/20261022T072230Z-verify-8373f7e5. New Linux GCC/Clang workflow prepared; execution not yet observed at this commit. Next: metrics/WAF and wear distribution tests, then wear-aware selection.

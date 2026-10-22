@@ -1,0 +1,291 @@
+{
+  "started_at_utc": "2026-10-22T07:22:14.195582+00:00",
+  "source_commit": "27e82b5eb6cce1ad30792efb5856f76e8384d054",
+  "working_tree": " M CMakeLists.txt\n M WORK_RESUME_CHECKPOINT.md\n M docs/CONTROLLER_ARCHITECTURE.md\n M docs/INVARIANTS.md\n M docs/TEST_FAILURE_LOG.md\n M include/atlas/ftl/page_mapping.hpp\n M src/ftl/page_mapping.cpp\n?? .github/workflows/atlas-core.yml\n?? include/atlas/gc/\n?? results/validation/20261022-gc-green.log\n?? results/validation/20261022-gc-red.log\n?? src/gc/\n?? tests/cpp/integration/gc_integration_test.cpp\n?? tests/cpp/unit/gc_test.cpp\n",
+  "status": "PASS",
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/atlas-validation-tools-20261022/bin/clang-format",
+        "--dry-run",
+        "--Werror",
+        "include/atlas/ftl/page_mapping.hpp",
+        "include/atlas/gc/greedy.hpp",
+        "include/atlas/nand/nand.hpp",
+        "src/ftl/page_mapping.cpp",
+        "src/gc/greedy.cpp",
+        "src/nand/nand.cpp",
+        "tests/cpp/catch_main.cpp",
+        "tests/cpp/integration/gc_integration_test.cpp",
+        "tests/cpp/integration/mapping_property_test.cpp",
+        "tests/cpp/property/nand_property_test.cpp",
+        "tests/cpp/unit/gc_test.cpp",
+        "tests/cpp/unit/mapping_test.cpp",
+        "tests/cpp/unit/nand_test.cpp",
+        "tests/differential/mapping_probe.cpp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "clang++",
+        "--analyze",
+        "-std=c++20",
+        "-Iinclude",
+        "src/ftl/page_mapping.cpp",
+        "-o",
+        "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage/analyzer-0.plist"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "clang++",
+        "--analyze",
+        "-std=c++20",
+        "-Iinclude",
+        "src/gc/greedy.cpp",
+        "-o",
+        "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage/analyzer-1.plist"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "clang++",
+        "--analyze",
+        "-std=c++20",
+        "-Iinclude",
+        "src/nand/nand.cpp",
+        "-o",
+        "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage/analyzer-2.plist"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "build-coverage",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DATLAS_COVERAGE=ON"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "build-coverage",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "./build-coverage/atlas_tests"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "llvm-profdata",
+        "merge",
+        "-sparse",
+        "build-coverage/20261022-gc-quality.profraw",
+        "-o",
+        "build-coverage/20261022-gc-quality.profdata"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "llvm-cov",
+        "report",
+        "build-coverage/atlas_tests",
+        "-instr-profile=build-coverage/20261022-gc-quality.profdata",
+        "src/ftl/page_mapping.cpp",
+        "src/gc/greedy.cpp",
+        "src/nand/nand.cpp"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "clang_tidy": "NOT RUN (unavailable)",
+  "source_sha256": {
+    "include/atlas/ftl/page_mapping.hpp": "38bc0723d5383969e05f49c15327827d73f81131b72365f6e246b10e387a1407",
+    "include/atlas/gc/greedy.hpp": "ca2d234e08506cab894077327343990d407106cce363510c59a9cdd31d546680",
+    "include/atlas/nand/nand.hpp": "106b730d50af886ab1694c683c27b6af0ea3b9276f16168f5c2f0f2e3add2414",
+    "src/ftl/page_mapping.cpp": "8effc27441a7ebaba19f520a2f468d0a2dc73e3636c38619680bdb9d05d94ab3",
+    "src/gc/greedy.cpp": "c68b2e1589a01c82e5621f5202d5b0330abf6f5bf9547862dd53b8de6d42c89a",
+    "src/nand/nand.cpp": "ee59c93e12c9755d142f8b3f30f315d7fe3db447448d536977bfa67d64cacf5e",
+    "tests/cpp/catch_main.cpp": "7d6cb7a789affbecf7e3c4d86d7b9b01422446e6e6bf7314b3e6bebd1965c448",
+    "tests/cpp/integration/gc_integration_test.cpp": "65ba2a55d2657d5a87927128638a33a3cdc2d43a0e578d93f29c33ee57b919b4",
+    "tests/cpp/integration/mapping_property_test.cpp": "9a6362077670f9d3493677905852a98728ad41f1dc27382e726eee65af1715cd",
+    "tests/cpp/property/nand_property_test.cpp": "89f72ba628b1944fa7fd537184d80ab7a8e93648a483a34e21fef1e377b902c1",
+    "tests/cpp/unit/gc_test.cpp": "0a32a33a53183d0e4e1ed590393bd5879f93c8a172192afdfafe226a8ef93cf6",
+    "tests/cpp/unit/mapping_test.cpp": "d646b820c2c39bc3eb1e04be13fe31b76c2357d1814329f03dacb78e44b0aeba",
+    "tests/cpp/unit/nand_test.cpp": "8360a7f7e091d4ddbe62590939febef4e79550dcd9e4e27de7e8c05d4ee183ad",
+    "tests/differential/mapping_probe.cpp": "9dd0b88ac0f450a7e93c20b28c7f5dfabdbe1b2a7150ddeecb15ab5f377c86cb",
+    "CMakeLists.txt": "003f161212e10aef5f3a7c25dd587482fe757a9a059b663ec0f6ade4fde99e0c"
+  },
+  "static_analyzer_diagnostics": 0,
+  "coverage": {
+    "branches": {
+      "count": 122,
+      "covered": 113,
+      "notcovered": 9,
+      "percent": 92.62295081967213
+    },
+    "functions": {
+      "count": 28,
+      "covered": 28,
+      "percent": 100
+    },
+    "instantiations": {
+      "count": 28,
+      "covered": 28,
+      "percent": 100
+    },
+    "lines": {
+      "count": 224,
+      "covered": 214,
+      "percent": 95.53571428571429
+    },
+    "mcdc": {
+      "count": 0,
+      "covered": 0,
+      "notcovered": 0,
+      "percent": 0
+    },
+    "regions": {
+      "count": 190,
+      "covered": 185,
+      "notcovered": 5,
+      "percent": 97.36842105263158
+    }
+  },
+  "files": [
+    {
+      "filename": "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/src/ftl/page_mapping.cpp",
+      "summary": {
+        "branches": {
+          "count": 66,
+          "covered": 58,
+          "notcovered": 8,
+          "percent": 87.87878787878788
+        },
+        "functions": {
+          "count": 12,
+          "covered": 12,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 12,
+          "covered": 12,
+          "percent": 100
+        },
+        "lines": {
+          "count": 120,
+          "covered": 112,
+          "percent": 93.33333333333333
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 94,
+          "covered": 90,
+          "notcovered": 4,
+          "percent": 95.74468085106383
+        }
+      }
+    },
+    {
+      "filename": "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/src/gc/greedy.cpp",
+      "summary": {
+        "branches": {
+          "count": 18,
+          "covered": 18,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "lines": {
+          "count": 21,
+          "covered": 21,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 22,
+          "covered": 22,
+          "notcovered": 0,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "filename": "/Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/src/nand/nand.cpp",
+      "summary": {
+        "branches": {
+          "count": 38,
+          "covered": 37,
+          "notcovered": 1,
+          "percent": 97.36842105263158
+        },
+        "functions": {
+          "count": 15,
+          "covered": 15,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 15,
+          "covered": 15,
+          "percent": 100
+        },
+        "lines": {
+          "count": 83,
+          "covered": 81,
+          "percent": 97.59036144578313
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 74,
+          "covered": 73,
+          "notcovered": 1,
+          "percent": 98.64864864864865
+        }
+      }
+    }
+  ],
+  "coverage_scope": "core cpp sources only, excludes tests and vendored framework",
+  "finished_at_utc": "2026-10-22T07:22:20.765267+00:00"
+}

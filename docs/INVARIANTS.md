@@ -18,3 +18,10 @@ Mapping and GC invariants will be added with their interfaces before implementat
 | M3 | Read returns last successful write token | Overwrite/integration/property cases |
 | M4 | Exhausted/invalid writes leave all mapping, payload and state unchanged | Failed overwrite and bad LPN tests |
 | M5 | No GC or hidden erase during basic mapping writes | Exhaustion counter checks |
+
+| G1 | Victim selection deterministic; live copies fit outside victim | Greedy tie/space tests |
+| G2 | Only VALID pages migrate; INVALID pages reclaimed and not copied | Mixed and fully-invalid GC cases |
+| G3 | Relocation preserves last logical payload and inverse ownership | GC integration and seeded pressure oracle |
+| G4 | Failed preflight leaves mappings/data/states/erase counts intact | Blocked GC integration |
+| G5 | Successful GC increments one erase, reclaims exactly invalid count | Per-call free/erase accounting |
+| G6 | Repeated GC terminates and is deterministic | Two-controller pressure replay |

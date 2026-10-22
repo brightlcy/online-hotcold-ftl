@@ -9,3 +9,7 @@ NAND GREEN: all 11 cases pass normal and ASan/UBSan. No warning option or test w
 Mapping RED: normal build succeeded; 11 existing NAND cases passed, all 8 new mapping/property cases failed for the unimplemented constructor. Evidence: results/validation/20261022-mapping-red.log. Implementation follows only after that execution.
 
 Mapping GREEN: 19 C++ cases plus Python differential pass normal and ASan/UBSan. No skipped/expected-failure final tests. Coverage/static/format checks pass.
+
+GC RED: all 8 newly added GC cases failed at runtime for unimplemented selector/trigger/migration; 20 previous CTest entries passed. Evidence 20261022-gc-red.log. Tests include blocked GC nonmutation and repeated deterministic pressure.
+
+GC GREEN: all 28 CTest entries pass normal and ASan+UBSan (27 C++ cases and mapping Python differential). Source cpp coverage 214/224 lines (95.54%), 113/122 branch outcomes (92.62%); Clang static analyzer 0 diagnostics, format PASS. Logs 20261022-gc-green.log and gc-quality.json/log.

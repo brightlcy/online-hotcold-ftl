@@ -30,3 +30,11 @@ Catch2/CTest: normal, boundary, illegal transitions, nonmutation on failure, pay
 ## Mapping atomic contract (before implementation)
 
 PageMapping owns NAND and fixed-size optional L2P/P2L vectors. Logical capacity must be 1..physical pages. Empty read throws out_of_range, bad LPN/PPN throws out_of_range, physical exhaustion throws NoFreePage (runtime_error). A failed overwrite must leave the old payload and both directions intact. Only successful writes consume one FREE page. Deterministic circular next-free scan; before GC the order equals the Python FIFO. No automatic GC in this atomic unit. Constructor validates logical capacity before NAND allocation. Per-write operations after NAND program do not allocate: optional<size_t> assignment and validated invalidate cannot throw. Allocation scans O(P), mapping/read O(1), invariant audit O(P+L).
+
+## GC atomic contract (before implementation)
+
+Pure `select_greedy_victim(span<BlockSummary>)` chooses reclaimable blocks by most INVALID pages, then fewest VALID pages, then lowest ID. Reject candidates whose live pages exceed FREE pages outside the victim. Partial blocks are eligible only with INVALID pages and positive net reclamation. Free-sum overflow is rejected before subtraction. No wear-aware selection yet.
+
+PageMapping owns the mutation transaction (`collect`), while the pure selector is separate and replaceable. Gather summaries and allocate the complete migration plan before mutation; copy each valid payload to distinct FREE pages outside victim, update inverse maps, invalidate old sources, erase only after all live pages move. Preflight erase-count overflow too. No new allocation or external callback after migration starts. Return victim, migration count and net reclaimed INVALID pages. No eligible/feasible victim throws GcBlocked with no mutation. `needs_gc(reserve_pages)` is free<=reserve, validates reserve<=capacity; caller explicitly invokes collect. Automatic write-triggered GC and background scheduling are not claimed.
+
+GC costs O(P+B) scan plus O(valid victim pages), temporary plan O(valid victim pages), no infinite retry loop. The snapshot/plan allocation can fail before mutation; external fault injection is not yet performed. Logical data and mappings are preserved even when allocation or GC preflight fails.

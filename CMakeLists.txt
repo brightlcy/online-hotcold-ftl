@@ -5,7 +5,7 @@ include(CTest)
 option(ATLAS_SANITIZERS "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
 option(ATLAS_COVERAGE "Enable LLVM source coverage" OFF)
 
-add_library(atlas_core src/nand/nand.cpp src/ftl/page_mapping.cpp)
+add_library(atlas_core src/nand/nand.cpp src/ftl/page_mapping.cpp src/gc/greedy.cpp)
 target_include_directories(atlas_core PUBLIC include)
 target_compile_features(atlas_core PUBLIC cxx_std_20)
 set_target_properties(atlas_core PROPERTIES CXX_EXTENSIONS OFF)
@@ -27,7 +27,8 @@ endif()
 if(BUILD_TESTING)
   add_executable(atlas_tests tests/cpp/catch_main.cpp tests/cpp/unit/nand_test.cpp
                  tests/cpp/property/nand_property_test.cpp tests/cpp/unit/mapping_test.cpp
-                 tests/cpp/integration/mapping_property_test.cpp)
+                 tests/cpp/integration/mapping_property_test.cpp tests/cpp/unit/gc_test.cpp
+                 tests/cpp/integration/gc_integration_test.cpp)
   target_include_directories(atlas_tests SYSTEM PRIVATE third_party/catch2)
   target_link_libraries(atlas_tests PRIVATE atlas_core)
   list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/third_party/catch2")

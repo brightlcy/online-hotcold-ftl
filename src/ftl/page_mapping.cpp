@@ -1,4 +1,6 @@
 #include "atlas/ftl/page_mapping.hpp"
+#include "atlas/gc/greedy.hpp"
+#include <limits>
 
 namespace atlas {
 namespace {
@@ -50,6 +52,66 @@ std::size_t PageMapping::write(std::size_t lpn, std::uint64_t value) {
     dest = dest == p2l_.size() - 1 ? 0 : dest + 1;
   }
   throw NoFreePage();
+}
+bool PageMapping::needs_gc(std::size_t reserve_pages) const {
+  if (reserve_pages > p2l_.size()) {
+    throw std::invalid_argument("GC reserve exceeds physical capacity");
+  }
+  return free_pages() <= reserve_pages;
+}
+GcResult PageMapping::collect() {
+  const auto &g = nand_.geometry();
+  std::vector<BlockSummary> blocks(g.total_blocks());
+  for (std::size_t p = 0; p < p2l_.size(); ++p) {
+    auto &block = blocks[p / g.pages_per_block()];
+    switch (nand_.state(p)) {
+    case PageState::Free:
+      ++block.free;
+      break;
+    case PageState::Valid:
+      ++block.valid;
+      break;
+    case PageState::Invalid:
+      ++block.invalid;
+      break;
+    }
+  }
+  const auto victim = select_greedy_victim(blocks);
+  if (!victim) {
+    throw GcBlocked();
+  }
+  if (nand_.erase_count(*victim) == std::numeric_limits<std::uint64_t>::max()) {
+    throw std::overflow_error("GC victim erase counter overflow");
+  }
+  struct Move {
+    std::size_t source, dest, lpn;
+    std::uint64_t value;
+  };
+  std::vector<std::size_t> destinations;
+  destinations.reserve(blocks[*victim].valid);
+  for (std::size_t p = 0; p < p2l_.size() && destinations.size() < blocks[*victim].valid; ++p) {
+    if (p / g.pages_per_block() != *victim && nand_.state(p) == PageState::Free) {
+      destinations.push_back(p);
+    }
+  }
+  std::vector<Move> plan;
+  plan.reserve(blocks[*victim].valid);
+  const auto begin = *victim * g.pages_per_block();
+  for (auto p = begin; p < begin + g.pages_per_block(); ++p) {
+    if (nand_.state(p) == PageState::Valid) {
+      plan.push_back({p, destinations.at(plan.size()), *p2l_[p], nand_.read(p)});
+    }
+  }
+  // All allocations, bounds checks, payload reads and erase preflight precede mutation.
+  for (const auto &move : plan) {
+    nand_.program(move.dest, move.value);
+    l2p_[move.lpn] = move.dest;
+    p2l_[move.dest] = move.lpn;
+    nand_.invalidate(move.source);
+    p2l_[move.source].reset();
+  }
+  nand_.erase(*victim);
+  return {*victim, plan.size(), blocks[*victim].invalid};
 }
 void PageMapping::assert_consistent() const {
   for (std::size_t l = 0; l < l2p_.size(); ++l) {

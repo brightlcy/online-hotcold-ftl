@@ -1,0 +1,22 @@
+{
+  "verified_at_utc": "2026-10-22T07:24:57.333267+00:00",
+  "preservation_status": "PASS",
+  "reference_verification": {
+    "archive_member_count": 103,
+    "archive_sha256": "c10cb3f53a7bc2e4c3d85595c7057a65f53fca64c91bdf167b887750a279cf44",
+    "errors": [],
+    "frozen_tag_file_checks": 0,
+    "reference_commit": "73664fb0f7fea91260ba0d17fd8a36978c402a0a",
+    "scope": "Export byte preservation and archive/manifest consistency; no experiment replay in verify.",
+    "source_file_count": 27,
+    "status": "PASS"
+  },
+  "source_run_manifest": "artifacts/runs/20261022T072230Z-verify-8373f7e5/run_manifest.json",
+  "source_run_manifest_sha256": "e0c8f166fd9cf48b9e2021f65af7218cfb48c6e4da49be4ac43d4315f21416cb",
+  "changed_original_simulator_files": [],
+  "bounded_secret_pattern_scan": {
+    "files_scanned": 62,
+    "matches": 0,
+    "scope": "common token/private-key patterns in changed and untracked candidate files; not a full security audit"
+  }
+}

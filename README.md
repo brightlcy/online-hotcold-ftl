@@ -58,3 +58,16 @@ The surviving record supports workload selection, equal-condition evaluation, re
 Use time-disjoint trace intervals, broader devices, hardware-calibrated models and a separately versioned latency fix. The follow-up [Host Hint Safe Fallback](https://github.com/brightlcy/host-hint-safe-fallback) asks whether lifetime separation can be trusted when hints are imperfect. It inherits the FTL core but uses controlled synthetic inputs and a different evaluation interval.
 
 한국어 요약: 반복 갱신 이력이 있는 일부 trace 구간에서는 분리 배치가 GC 복사를 줄였고, dev740에서는 이득이 없었습니다. 실제 SSD 수명·지연 개선을 증명한 실험은 아닙니다.
+
+## ATLAS-SSD continuation (development branch)
+
+The existing research now has a separate C++20 correctness core on branch `atlas-ssd-resume-20261022`; frozen Python algorithms/results are preserved. Implemented: checked channel/chip/die/block/page geometry, NAND state/token model, L2P/P2L mapping with failed-overwrite data preservation, and deterministic greedy GC with preflight/migration/erase. Caller explicitly invokes GC through the reserve trigger. No hardware, timing, new policy contribution or new C++ performance result is claimed.
+
+```sh
+sh scripts/run_fast_tests.sh
+sh scripts/run_full_validation.sh
+```
+
+Tests use vendored Catch2 v2.13.10 (BSL-1.0). Normal + ASan/UBSan CTest: 28/28 PASS locally on macOS ARM64; original-Python metadata differential: 19 traces/662 committed mapping events. GC differential equivalence is not claimed. Core cpp coverage 95.54% lines / 92.62% branch outcomes; defensive corruption/counter-limit edges remain uncovered. Clang static analyzer and formatting pass. [Checkpoint](WORK_RESUME_CHECKPOINT.md), [architecture](docs/CONTROLLER_ARCHITECTURE.md), [test evidence](results/validation/), [existing research audit](docs/EXISTING_RESEARCH_AUDIT.md). Linux workflow is recorded separately when actually executed.
+
+Alibaba long replay was already complete at interruption; on 2026-10-22 its existing six policy outputs were finalized successfully without rerunning simulation. [Completion report](results/manifests/rebuild_completed_hotcold_replay.json). MSR input remains absent. Next C++ work: cumulative metrics/WAF and wear distribution tests, then wear-aware selection and host-hint policies.

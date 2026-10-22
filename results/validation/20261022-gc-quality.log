@@ -1,0 +1,53 @@
+$ /private/tmp/atlas-validation-tools-20261022/bin/clang-format --dry-run --Werror include/atlas/ftl/page_mapping.hpp include/atlas/gc/greedy.hpp include/atlas/nand/nand.hpp src/ftl/page_mapping.cpp src/gc/greedy.cpp src/nand/nand.cpp tests/cpp/catch_main.cpp tests/cpp/integration/gc_integration_test.cpp tests/cpp/integration/mapping_property_test.cpp tests/cpp/property/nand_property_test.cpp tests/cpp/unit/gc_test.cpp tests/cpp/unit/mapping_test.cpp tests/cpp/unit/nand_test.cpp tests/differential/mapping_probe.cpp
+
+EXIT 0
+$ clang++ --analyze -std=c++20 -Iinclude src/ftl/page_mapping.cpp -o /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage/analyzer-0.plist
+
+EXIT 0
+$ clang++ --analyze -std=c++20 -Iinclude src/gc/greedy.cpp -o /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage/analyzer-1.plist
+
+EXIT 0
+$ clang++ --analyze -std=c++20 -Iinclude src/nand/nand.cpp -o /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage/analyzer-2.plist
+
+EXIT 0
+$ cmake -S . -B build-coverage -DCMAKE_BUILD_TYPE=Debug -DATLAS_COVERAGE=ON
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/changyeop/SSD_FTL_CLEANUP_WORKSPACE/research-portfolio/online-hotcold-ftl/build-coverage
+
+EXIT 0
+$ cmake --build build-coverage --parallel 2
+[ 14%] Building CXX object CMakeFiles/atlas_core.dir/src/gc/greedy.cpp.o
+[ 14%] Building CXX object CMakeFiles/atlas_core.dir/src/ftl/page_mapping.cpp.o
+[ 21%] Linking CXX static library libatlas_core.a
+[ 28%] Built target atlas_core
+[ 35%] Building CXX object CMakeFiles/atlas_mapping_probe.dir/tests/differential/mapping_probe.cpp.o
+[ 42%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/unit/mapping_test.cpp.o
+[ 50%] Linking CXX executable atlas_mapping_probe
+[ 50%] Built target atlas_mapping_probe
+[ 57%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/integration/mapping_property_test.cpp.o
+[ 64%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/unit/gc_test.cpp.o
+[ 71%] Building CXX object CMakeFiles/atlas_tests.dir/tests/cpp/integration/gc_integration_test.cpp.o
+[ 78%] Linking CXX executable atlas_tests
+[100%] Built target atlas_tests
+
+EXIT 0
+$ ./build-coverage/atlas_tests
+===============================================================================
+All tests passed (57747 assertions in 27 test cases)
+
+
+EXIT 0
+$ xcrun llvm-profdata merge -sparse build-coverage/20261022-gc-quality.profraw -o build-coverage/20261022-gc-quality.profdata
+
+EXIT 0
+$ xcrun llvm-cov report build-coverage/atlas_tests -instr-profile=build-coverage/20261022-gc-quality.profdata src/ftl/page_mapping.cpp src/gc/greedy.cpp src/nand/nand.cpp
+Filename                      Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover    Branches   Missed Branches     Cover
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ftl/page_mapping.cpp               94                 4    95.74%          12                 0   100.00%         120                 8    93.33%          66                 8    87.88%
+gc/greedy.cpp                      22                 0   100.00%           1                 0   100.00%          21                 0   100.00%          18                 0   100.00%
+nand/nand.cpp                      74                 1    98.65%          15                 0   100.00%          83                 2    97.59%          38                 1    97.37%
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                             190                 5    97.37%          28                 0   100.00%         224                10    95.54%         122                 9    92.62%
+
+EXIT 0
