@@ -49,9 +49,6 @@ MSR prxy_1 and Alibaba devices 4, 49, 740 each contribute one 100k-request polic
 
 The data include the neutral case. Threshold 2 also worsened historical modeled max latency in MSR; lower WAF does not establish universal latency improvement. [Results](docs/RESULTS.md) links raw archived manifests, derived CSV, script, captions and verification status.
 
-## My contribution
-
-The surviving record supports workload selection, equal-condition evaluation, result checks and interpretation. AI assisted implementation and tests; line-by-line independent authorship is not established. [Ownership boundaries](docs/CONTRIBUTIONS.md) distinguish the original study from this portfolio rebuild.
 
 ## Future work and related research
 
